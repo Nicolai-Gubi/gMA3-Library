@@ -1622,7 +1622,7 @@ function UnhookMultiple(callback, handleTarget, handleContext) end
 ---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_uservars/en/1.9)
 ---
 ---@return lightuserdata # Returns the handle to the user variable set  .
-function UserVarS() end
+function UserVars() end
 
 --160
 --Object-Free - Version(nothing): string::version
