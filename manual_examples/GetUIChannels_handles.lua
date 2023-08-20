@@ -7,6 +7,6 @@ return function()
         return
     end
     for key,value in pairs(uiChannels) do
-        Printf(key .. ": UIChannel Index = %i, (Sub)Attribute = %s", value.INDEX-1, value.SUBATTRIBUTE)
+        Printf("List index number ".. key .. ": UIChannel Index = %i, (Sub)Attribute = %s", value.INDEX-1, value.SUBATTRIBUTE)
 	end
 end

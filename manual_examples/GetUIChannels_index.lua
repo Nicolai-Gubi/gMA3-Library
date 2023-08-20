@@ -5,7 +5,7 @@ return function()
         ErrPrintf("Please select a fixture and try again")
         return
     end
-    for key,value in pairs(uiChannels) do
-        Printf(key .. " :  UIChannel Index = " .. value)
+    for key,value in ipairs(uiChannels) do
+        Printf("List index number ".. key .. " :  UIChannel Index = " .. value)
 	end
 end
