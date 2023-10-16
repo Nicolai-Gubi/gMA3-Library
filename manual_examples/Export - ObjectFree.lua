@@ -1,3 +1,4 @@
+-- Object-Free
 return function()
     -- 'BuildDetails()' creates a table with information about the software build.
     local build = BuildDetails()
