@@ -501,13 +501,12 @@ function GetAttributeIndex(attributeName) end
 
 --050
 --Object-Free - GetButton(light_userdata:usb device object handle): table of bool:state
---ToDo
 
 ---
 ---
 ---
----@param usbDeviceHandle lightuserdata Handle to an USB device
----@return table # A table of 512 booleans indicating if buttons are pressed
+---@param usbDeviceHandle lightuserdata Handle to a MA3module.
+---@return table # A table of 512 booleans indicating if buttons are pressed.
 function GetButton(usbDeviceHandle) end
 
 --051
@@ -1376,9 +1375,9 @@ function SerialNumber() end
 --ToDo
 
 ---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_setblockinput/en/1.9)
 ---
----
----@param block boolean
+---@param block boolean If "true", then the USB connected keyboard and mouse input is blocked. If "false", then the USB input is unblocked.
 function SetBlockInput(block) end
 
 --137
