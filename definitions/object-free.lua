@@ -32,8 +32,10 @@ function AddFixtures(fixtureTable) end
 
 --002
 --Object-Free - AddonVars(string: addon name): light userdata: addon variables
---ToDo
 
+---
+---[Online Manual Page]https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_addonvars.html
+---
 ---@param addon_name string The name of the Addon.
 ---@return lightuserdata # Returns the handle to the addon variable set.
 function AddonVars(addon_name) end
@@ -61,11 +63,13 @@ function CheckDMXCollision(dmxMode, dmxAddress, count, breakIndex) end
 
 --005
 --Object-Free - CheckFIDCollision(integer:FID [,integer:count [,integer:type]]): boolean: true - no FID collisions, false - collisions
---ToDo
 
----@param FID integer
----@param count? integer|nil
----@param type? integer
+---
+---
+---
+---@param FID integer The ID to check.
+---@param count? integer|nil The count of subsequent IDs to check.
+---@param type? integer The FixtureIDType index number. Default value is 0 = "Fixture". 
 ---@return boolean # True = No collision, False = collision.
 function CheckFIDCollision(FID, count, type) end
 
