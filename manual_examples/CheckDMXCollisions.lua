@@ -13,7 +13,7 @@ return function()
     local startOfRange = string.format("%d.%03d", myDMXUniverse, myDMXAddress)
 
     -- Check if there is a selection and exit if there isn't.
-    if GetSubfixture(SelectionFirst()) == nil then
+    if SelectionFirst() == nil then
         Printf("Please make a selection and try again.")
         return
     end

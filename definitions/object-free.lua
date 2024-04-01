@@ -8,24 +8,27 @@
 --
 --
 
+--- This table is used for the "AddFixtures" function.
 ---@class tableFixture
----@field mode lightuserdata Handle to DMX mode
----@field amount integer
----@field undo? string
----@field parent? lightuserdata Handle to parent fixture
----@field insert_index? integer
----@field idtype? string
----@field cid? string
----@field fid? string
----@field name? string
----@field layer? string
----@field class? string
----@field patch? table Array of up to 8 addresses as strings
+---@field mode lightuserdata Handle to a DMX mode.
+---@field amount integer The amount of fixtures that should be added.
+---@field undo? string An string with an undo text.
+---@field parent? lightuserdata Handle to parent fixture.
+---@field insert_index? integer An integer indicating the index where the fixture should be inserted.
+---@field idtype? string A string with the Id Type for the fixture. Not needed if the Id Type should be "Fixture".
+---@field cid? string Astring with the CID - only valid if the "idtype" is not "Fixture".
+---@field fid? string A string with the FID.
+---@field name? string A string withthe fixture name.
+---@field layer? string A string with the layer.
+---@field class? string A string with the class.
+---@field patch? table Array of up to 8 addresses as strings in "Universe.Address" format.
 
 --001
---Object-Free - AddFixtures({mode:handle to DMX mode, amount:integer [,undo: string][,parent: handle][,insert_index:integer][,idtype:string][,cid:string][,fid:string][,name:string][,layer:string][,class:string][,patch:{array 1..8: string address}]}): true on success or nil
---ToDo
+--Object-Free - AddFixtures({'mode'=light_userdata:dmx_mode, 'amount'=integer:amount[, 'undo'=string:undo_text][, 'parent'=light_userdata:handle][, 'insert_index'=integer:value][, 'idtype'=string:idtype][, 'cid'=string:cid][, 'fid'=string:fid][, 'name'=string:name][, 'layer'=string:layer][, 'class'=string:class][, 'patch'={table 1..8: string:address}]}): boolean:success or nothing
 
+---
+---
+---
 ---@param fixtureTable tableFixture
 ---@return boolean|nil # Returns true if success. return nil is failure.
 function AddFixtures(fixtureTable) end
@@ -45,19 +48,21 @@ function AddonVars(addon_name) end
 --Object-Free - BuildDetails(nothing): table:build details
 
 ---
----[Online Manual Page](https://help2.malighting.com/Topic/6b13f67b-05e0-403a-b066-55022c9707a4)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_builddetails.html)
 ---
 ---@return table # Returns a table with the build details.
 function BuildDetails() end
 
 --004
---Object-Free - CheckDMXCollision(light_userdata:dmx mode, string:dmx address [,integer:count [,integer:breakIndex]]): boolean:true - no collision, false - collisions
---ToDo
+--Object-Free - CheckDMXCollision(light_userdata:dmx_mode, string:dmx_address[ ,integer:count[ ,integer:break_index]]): boolean:no_collision_found
 
----@param dmxMode lightuserdata
----@param dmxAddress string
----@param count? integer|nil
----@param breakIndex? integer
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_checkdmxcollision.html)
+---
+---@param dmxMode lightuserdata Handle to DMX mode.
+---@param dmxAddress string The address as a string in "Universe.Address" format.
+---@param count? integer|nil The optional count for the number of fixtures (break_index channel amount) to check.
+---@param breakIndex? integer The optional break_index number for fixtures with multiple breaks.
 ---@return boolean # True = No collision, False = collision.
 function CheckDMXCollision(dmxMode, dmxAddress, count, breakIndex) end
 
@@ -65,7 +70,7 @@ function CheckDMXCollision(dmxMode, dmxAddress, count, breakIndex) end
 --Object-Free - CheckFIDCollision(integer:FID [,integer:count [,integer:type]]): boolean: true - no FID collisions, false - collisions
 
 ---
----
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_checkfidcollision.html)
 ---
 ---@param FID integer The ID to check.
 ---@param count? integer|nil The count of subsequent IDs to check.
@@ -77,7 +82,8 @@ function CheckFIDCollision(FID, count, type) end
 --Object-Free - ClassExists(string:class_name): boolean:result
 
 ---
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_classexists/en/1.9)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_classexists.html)
+--- Checks if a class exists.
 ---
 ---@param class_name string A string containing a single word that could be a class.
 ---@return boolean # Returns true if the class exists.
@@ -87,7 +93,7 @@ function ClassExists(class_name) end
 --Object-Free - CloseAllOverlays(nothing): nothing
 
 ---
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_closealloverlays/en/1.9)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_closealloverlays.html)
 --- Closes any open overlays on any screen.
 ---
 function CloseAllOverlays() end
@@ -96,7 +102,7 @@ function CloseAllOverlays() end
 --Object-Free - CloseUndo(light userdata: handle to undo): boolean: true if was closed, false - if it's still in use
 
 ---
----[Online Manual Page](https://help2.malighting.com/Topic/a9266818-d8e9-43ab-8d5b-263c29ac758f)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_closeundo.html)
 ---
 ---@param undoHandle lightuserdata This should be a handle for an existing undo object.
 ---@return boolean # Returns true if the undo object was closed, false if it could not be closed.
@@ -191,7 +197,7 @@ function Confirm(title, message, displayIndex, showCancel) end
 function CreateDirectoryRecursive(path) end
 
 --018
---Object-Free - CreateMultiPatch({array of fixture handles}, integer: count[, string: undo text]): integer: amount of multi-patch fixtures created
+--Object-Free - CreateMultiPatch({light_userdata:fixture_handles}, integer:count[ ,string:undo_text]): integer:amount_of_multi-patch_fixtures_created
 --ToDo
 
 ---@param fixtureHandleArray any
@@ -238,6 +244,15 @@ function CurrentExecPage() end
 function CurrentProfile() end
 
 --023
+--Object-Free - CurrentScreenConfig(nothing): light_userdata:handle
+
+---
+---
+---
+---@return lightuserdata # Handle to the current screen configuration.
+function CurrentScreenConfig() end
+
+--024
 --Object-Free - CurrentUser(nothing): light_userdata:handle
 
 ---
@@ -246,7 +261,7 @@ function CurrentProfile() end
 ---@return lightuserdata # Handle to the currently active user object.
 function CurrentUser() end
 
---024
+--025
 --Object-Free - DataPool(nothing): light_userdata:handle
 
 ---
@@ -255,7 +270,7 @@ function CurrentUser() end
 ---@return lightuserdata # Handle to the currently active DataPool object.
 function DataPool() end
 
---025
+--026
 --Object-Free - DefaultDisplayPositions(nothing): light_userdata:handle
 
 ---
@@ -264,7 +279,7 @@ function DataPool() end
 ---@return lightuserdata # Handle to the DefaultDisplayPositions object.
 function DefaultDisplayPositions() end
 
---026
+--027
 --Object-Free - DelVar(light userdata: variables, string:varname): bool:success
 
 ---
@@ -275,7 +290,7 @@ function DefaultDisplayPositions() end
 ---@return boolean # True if the variable was deleted - False if it could not be deleted.
 function DelVar(variableSet, variableName) end
 
---027
+--028
 --Object-Free - DeskLocked(): boolean: true if desk is locked
 
 ---
@@ -284,20 +299,23 @@ function DelVar(variableSet, variableName) end
 ---@return boolean # True if the station is locked - False if it is not locked.
 function DeskLocked() end
 
---028
+--029
+--Object-Free - DeviceConfiguration(nothing): light_userdata:handle
+
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_deviceconfiguration.html)
+---
+---@return lightuserdata # Handle to the Device Configuration {Root()[21]}
+function DeviceConfiguration() end
+
+--030
 --Object-Free - DevMode3d(nothing): string::DevMode3d
 --ToDo
 
 ---@return string 
 function DevMode3d() end
 
---029
---Object-Free - DeviceConfiguration(nothing): light_userdata:handle
-
----@return lightuserdata # Handle to the Device Configuration {Root()[21]}
-function DeviceConfiguration() end
-
---030
+--031
 --Object-Free - DirList(string:path [,string:filter(s)]): array of {name:string, size:int, time:int}
 --ToDo
 
@@ -306,7 +324,7 @@ function DeviceConfiguration() end
 ---@return table # Array of objects
 function DirList(path, filters) end
 
---031
+--032
 --Object-Free - DrawPointer(integer:display_index, {x,y}:position[, number:duration]): nothing
 
 ---
@@ -317,7 +335,7 @@ function DirList(path, filters) end
 ---@param duration? number The duration is in milliseconds. It it not provided, then the pointer stays visible.
 function DrawPointer(displayIndex, position, duration) end
 
---032
+--033
 --Object-Free - DumpAllHooks(nothing): nothing
 --ToDo
 
