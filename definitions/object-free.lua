@@ -341,7 +341,7 @@ function DrawPointer(displayIndex, position, duration) end
 
 function DumpAllHooks() end
 
---033
+--034
 --Object-Free - Echo(string:format ...): nothing
 
 ---
@@ -352,7 +352,7 @@ function DumpAllHooks() end
 ---@param ...? T Additional arguments.
 function Echo(format, ...) end
 
---034
+--035
 --Object-Free - ErrEcho(string:format ...): nothing
 
 ---
@@ -363,7 +363,7 @@ function Echo(format, ...) end
 ---@param ...? T Additional arguments.
 function ErrEcho(format, ...) end
 
---035
+--036
 --Object-Free - ErrPrintf(string:format ...): nothing
 
 ---
@@ -374,7 +374,7 @@ function ErrEcho(format, ...) end
 ---@param ...? T Additional arguments.
 function ErrPrintf(format, ...) end
 
---036
+--037
 --Object-Free - Export(string:filename, table:export_data): bool:success
 
 ---
@@ -385,7 +385,7 @@ function ErrPrintf(format, ...) end
 ---@return boolean # True if the data was exported - False if it could not be exported.
 function Export(filename, exportData) end
 
---037
+--038
 --Object-Free - ExportCSV(string:filename, table:export_data): bool:success
 
 ---
@@ -396,7 +396,7 @@ function Export(filename, exportData) end
 ---@return boolean # True if the data was exported - False if it could not be exported.
 function ExportCSV(filename, exportData) end
 
---038
+--039
 --Object-Free - ExportJson(string:filename, table:export_data): bool:success
 
 ---
@@ -407,7 +407,7 @@ function ExportCSV(filename, exportData) end
 ---@return boolean # True if the data was exported - False if it could not be exported.
 function ExportJson(filename, exportData) end
 
---039
+--040
 --Object-Free - FileExists(string:path): boolean:result
 
 ---
@@ -417,7 +417,7 @@ function ExportJson(filename, exportData) end
 ---@return boolean
 function FileExists(path) end
 
---040
+--041
 --Object-Free - FindBestDMXPatchAddr(light_userdata:patch, integer:starting address, integer:footprint): integer:absolute address
 --ToDo
 
@@ -430,7 +430,7 @@ function FileExists(path) end
 ---@return integer # The absolute DMX address
 function FindBestDMXPatchAddr(patch, startingAddress, footprint) end
 
---041
+--042
 --Object-Free - FindBestFocus([light_userdata:handle]): nothing
 --ToDo
 
@@ -440,7 +440,7 @@ function FindBestDMXPatchAddr(patch, startingAddress, footprint) end
 ---@param handle? lightuserdata
 function FindBestFocus(handle) end
 
---042
+--043
 --Object-Free - FindNextFocus([bool:backwards(false)[,int(Focus::Reason):reason(UserTabKey)]]): nothing
 --ToDo
 
@@ -451,7 +451,7 @@ function FindBestFocus(handle) end
 ---@param reason? integer
 function FindNextFocus(backwards, reason) end
 
---043
+--044
 --Object-Free - FindTexture(string:texture name): light userdata: handle to texture found
 --ToDo
 
@@ -462,17 +462,26 @@ function FindNextFocus(backwards, reason) end
 ---@return lightuserdata # Handle to texture matching the string input
 function FindTexture(textureName) end
 
---044
---Object-Free - FixtureType(nothing): light_userdata:handle
---ToDo
+--045
+--Object-Free - FirstDmxModeFixture(light_userdata:dmxmode): light_userdata:fixture
+-- ToDo
 
 ---
 ---
 ---
----@return lightuserdata 
+---@param dmxMode lightuserdata
+---@return lightuserdata # The handle of the first fixture using the DMX mode
+function FirstDmxModeFixture(dmxMode)end
+
+--046
+--Object-Free - FixtureType(nothing): light_userdata:handle
+---
+---
+---
+---@return lightuserdata|nil # The handle of the fixture type at the current commandline location.
 function FixtureType() end
 
---045
+--047
 --Object-Free - FromAddr(string:address [, light_userdata:base handle]): light_userdata:handle
 
 ---
@@ -480,10 +489,10 @@ function FixtureType() end
 ---
 ---@param address string A string identifying an object. It can be a numbered or named address.
 ---@param baseHandle? lightuserdata This optional handle can specify a different base location than "Root". It still needs to be a base location in the address path from the root to the object.
----@return lightuserdata The handle for the addressed object.
+---@return lightuserdata # The handle for the addressed object.
 function FromAddr(address, baseHandle) end
 
---046
+--048
 ---Object-Free - GetApiDescriptor(nothing): table: api content
 
 ---
@@ -492,7 +501,7 @@ function FromAddr(address, baseHandle) end
 ---@return table # A table with the factory description of the object free functions.
 function GetApiDescriptor() end
 
---047
+--049
 --Object-Free - GetAttributeByUIChannel(integer: UI channel index): light userdata: reference to attribute or nil
 
 ---
@@ -502,7 +511,7 @@ function GetApiDescriptor() end
 ---@return lightuserdata|nil # Handle to the attribute.
 function GetAttributeByUIChannel(uiChannelIndex) end
 
---048
+--050
 --Object-Free - GetAttributeCount(nothing): int:attribute count
 
 ---
@@ -511,7 +520,7 @@ function GetAttributeByUIChannel(uiChannelIndex) end
 ---@return integer # The amount of attributes.
 function GetAttributeCount() end
 
---049
+--051
 --Object-Free - GetAttributeIndex(string:attribute name): int:attribute index
 
 ---
@@ -521,7 +530,7 @@ function GetAttributeCount() end
 ---@return integer # The returned integer is the index of the attribute.
 function GetAttributeIndex(attributeName) end
 
---050
+--052
 --Object-Free - GetButton(light_userdata:usb device object handle): table of bool:state
 
 ---
@@ -531,7 +540,7 @@ function GetAttributeIndex(attributeName) end
 ---@return table # A table of 512 booleans indicating if buttons are pressed.
 function GetButton(usbDeviceHandle) end
 
---051
+--053
 --Object-Free - GetChannelFunction(int:ui channel index,int:attribute index): light_userdata: handle
 
 ---
@@ -542,7 +551,7 @@ function GetButton(usbDeviceHandle) end
 ---@return lightuserdata # Handle to the channel function.
 function GetChannelFunction(uiChannelIndex, attributeIndex) end
 
---052
+--054
 --Object-Free - GetChannelFunctionIndex(int:ui channel index,int:attribute index): int:channel function index
 
 ---
@@ -553,7 +562,7 @@ function GetChannelFunction(uiChannelIndex, attributeIndex) end
 ---@return integer # Index number of the channel function.
 function GetChannelFunctionIndex(uiChannelIndex, attributeIndex) end
 
---053
+--055
 --Object-Free - GetClassDerivationLevel(string:class_name): integer:result or nil
 
 ---
@@ -563,7 +572,43 @@ function GetChannelFunctionIndex(uiChannelIndex, attributeIndex) end
 ---@return integer # The returned integer indicates the class derivation level.
 function GetClassDerivationLevel(className) end
 
---054
+--056
+--Object-Free - GetCurrentCue(nothing): light_userdata:handle
+---
+---
+---
+---@return lightuserdata # The returned handle to the current active cue in the selected sequence.
+function GetCurrentCue() end
+
+--057
+--Object-Free - GetDebugFPS(nothing): integer:fps
+---
+---
+---
+---@return number # The returned number is a float indocating the frames per seconds.
+function GetDebugFPS() end
+
+--058
+--Object-Free - GetDisplayByIndex(integer:display_index): light_userdata:display_handle
+
+---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getdisplaybyindex/en/1.9)
+---
+---@param displayIndex integer The integer needs to be an index number for one of the displays.
+---@return lightuserdata # Handle to the display matching the index.
+function GetDisplayByIndex(displayIndex) end
+
+--059
+--Object-Free - GetDisplayCollect(nothing): light_userdata:handle to DisplayCollect
+
+---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getdisplaycollect/en/1.9)
+--- Root().GraphicsRoot.PultCollect["Pult 1"].DisplayCollect
+---
+---@return lightuserdata # Handle to the Display Collect object.
+function GetDisplayCollect() end
+
+--060
 --Object-Free - GetDMXUniverse(integer:universe [,boolean: modePercent]): table of integer: dmx values
 
 ---
@@ -574,7 +619,7 @@ function GetClassDerivationLevel(className) end
 ---@return table|nil # The returned table is all the DMX adresses in the provided universe and the current DMX Value in percent or DMX value. Nil if the universe is not granted.
 function GetDMXUniverse(universe, modePercent) end
 
---055
+--061
 --Object-Free - GetDMXValue(integer:address [,integer:universe, boolean: modePercent]): integer: dmx value
 
 ---
@@ -586,35 +631,7 @@ function GetDMXUniverse(universe, modePercent) end
 ---@return integer|nil # The DMX value of the provided DMX address in DMX or percent. Nil if the universe is not granted.
 function GetDMXValue(address, universe, modePercent) end
 
---056
---Object-Free - GetDebugFPS(nothing): number: fps
---ToDo
-
----
----@return number 
-function GetDebugFPS() end
-
---057
---Object-Free - GetDisplayByIndex(integer:display_index): light_userdata:display_handle
-
----
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getdisplaybyindex/en/1.9)
----
----@param displayIndex integer The integer needs to be an index number for one of the displays.
----@return lightuserdata # Handle to the display matching the index.
-function GetDisplayByIndex(displayIndex) end
-
---058
---Object-Free - GetDisplayCollect(nothing): light_userdata:handle to DisplayCollect
-
----
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getdisplaycollect/en/1.9)
---- Root().GraphicsRoot.PultCollect["Pult 1"].DisplayCollect
----
----@return lightuserdata # Handle to the Display Collect object.
-function GetDisplayCollect() end
-
---059
+--062
 --Object-Free - GetExecutor(integer:exec number): light_userdata:handle to executor, light_userdata: handle to page
 
 ---
@@ -625,7 +642,7 @@ function GetDisplayCollect() end
 ---@return lightuserdata executorPage Handle to the current executor page.
 function GetExecutor(execNumber) end
 
---060
+--063
 --Object-Free - GetFocus(nothing): light_userdata:display_handle
 
 ---
@@ -634,7 +651,7 @@ function GetExecutor(execNumber) end
 ---@return lightuserdata # Handle to object that currently has focus.
 function GetFocus() end
 
---061
+--064
 --Object-Free - GetFocusDisplay(nothing): light_userdata:display_handle
 
 ---
@@ -643,7 +660,7 @@ function GetFocus() end
 ---@return lightuserdata # Handle to display that currently got focus.
 function GetFocusDisplay() end
 
---062
+--065
 --Object-Free - GetObjApiDescriptor(nothing): table: api content
 
 ---
@@ -652,7 +669,7 @@ function GetFocusDisplay() end
 ---@return table # A table with the factory description of the object functions.
 function GetObjApiDescriptor() end
 
---063
+--066
 --Object-Free - GetPath(string:path type | int as path type from enum 'PathType' [,bool: create]): string:path
 
 ---
@@ -663,7 +680,7 @@ function GetObjApiDescriptor() end
 ---@return string The returned string is the *first found* full path related to the provided argument.
 function GetPath(pathType, create) end
 
---064
+--067
 --Object-Free - GetPathOverrideFor(string:path type | int as path type from enum 'PathType', string:path [,bool: create]): string:overriden path
 --ToDo
 
@@ -674,7 +691,7 @@ function GetPath(pathType, create) end
 ---@return string
 function GetPathOverrideFor(pathType, path, create) end
 
---065
+--068
 --Object-Free - GetPathSeparator(): 
 
 ---
@@ -683,17 +700,17 @@ function GetPathOverrideFor(pathType, path, create) end
 ---@return string # The returned string is '/'(Linux) or '\\'(Windows) depending on the operating system.
 function GetPathSeparator() end
 
---066
+--069
 --Object-Free - GetPathType(light_userdata:target object [, integer: content type (Enums.PathContentType)]): path type name
 --ToDo
 
 ---
 ---@param targetObject lightuserdata
----@param contentType integer
+---@param contentType? integer
 ---@return string
 function GetPathType(targetObject, contentType) end
 
---067
+--070
 --Object-Free - GetPresetData(light_userdata:handle(Preset)[,phasers only(default: false)[,by fixtures(default: false)]]): array of phaser data
 --ToDo
 
@@ -704,7 +721,7 @@ function GetPathType(targetObject, contentType) end
 ---@return table
 function GetPresetData(presetHandle, phasersOnly, byFixtures) end
 
---068
+--071
 --Object-Free - GetProgPhaser(number:uichannelindex, bool:phaser_only): {[abs_preset:<light_userdata: handle>][rel_preset:<light_userdata: handle>][fade:<val>][delay:<val>][speed:<Hz>][phase:<val>][measure:<val>][gridpos:<val>][mask_active_phaser:<bool>][mask_active_value:<bool>][mask_individual:<bool>] {[function:<val>] [absolute:<val>][absolute_value:<val>][relative:<val>] [accel:<val>][accel_type:<Enums.SplineType>][decel:<val>][decel_type:<Enums.SplineType>] [trans:<val>][width:<val>] [integrated:<light_userdata: handle>]}*}
 --ToDo
 
@@ -714,7 +731,7 @@ function GetPresetData(presetHandle, phasersOnly, byFixtures) end
 ---@return table
 function GetProgPhaser(uiChannelIndex, phaserOnly) end
 
---069
+--072
 --Object-Free - GetProgPhaserValue(number:uichannelindex, number:step): {[function:<val>] [absolute:<val>][absolute_value:<val>][relative:<val>] [accel:<val>][accel_type:<Enums.SplineType>][decel:<val>][decel_type:<Enums.SplineType>] [trans:<val>][width:<val>] [integrated:<light_userdata: handle>]}
 --ToDo
 
@@ -724,7 +741,7 @@ function GetProgPhaser(uiChannelIndex, phaserOnly) end
 ---@return table
 function GetProgPhaserValue (uiChannelIndex, step) end
 
---070
+--073
 --Object-Free - GetPropertyColumnId(light_userdata:handle, string:propertyname): LuaInteger
 --ToDo
 
@@ -733,36 +750,6 @@ function GetProgPhaserValue (uiChannelIndex, step) end
 ---@param propertyName string
 ---@return integer
 function GetPropertyColumnId(handle, propertyName) end
-
---071
---Object-Free - GetRTChannel(integer: channel RT index): {ChannelRT descriptor} or nil
-
----
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannel/en/1.9)
----
----@param rtChannelIndex integer The integer should be the index number for an RT Channel.
----@return table|nil # The returned table contains all relevant information about the RT channel. Nil is returned if the index doesn't match an RT channel.
-function GetRTChannel(rtChannelIndex) end
-
---072
---Object-Free - GetRTChannelCount(nothing): int:rt channel count
-
----
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannelcount/en/1.9)
----
----@return integer  # The amount of RT channels.
-function GetRTChannelCount() end
-
---073
---Object-Free - GetRTChannels(integer: fixture index or light userdata: reference to Fixture object[,boolean: as handles]): {array of RT channel indices or handles} or nil
-
----
----[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannels/en/1.9)
----
----@param fixtureID integer|lightuserdata The integer should be the index number for a (sub)fixture. The handle (lightuserdata) should relate to a (sub)fixture object.
----@param asHandles boolean If True, then the returned table contains handles for RT Channel objects. If False then the returned table contains integers index values to the RT Channel objects.
----@return table|nil # The returned table can be a list of RT Channel indexes or handles to the same RT Channels. Nil is returned if the RT channel is not found.
-function GetRTChannels(fixtureID, asHandles) end
 
 --074
 --Object-Free - GetRemoteVideoInfo(nothing): integer:wingID, boolean:isExtension
@@ -776,6 +763,36 @@ function GetRTChannels(fixtureID, asHandles) end
 function GetRemoteVideoInfo(displayIndex) end
 
 --075
+--Object-Free - GetRTChannel(integer: channel RT index): {ChannelRT descriptor} or nil
+
+---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannel/en/1.9)
+---
+---@param rtChannelIndex integer The integer should be the index number for an RT Channel.
+---@return table|nil # The returned table contains all relevant information about the RT channel. Nil is returned if the index doesn't match an RT channel.
+function GetRTChannel(rtChannelIndex) end
+
+--076
+--Object-Free - GetRTChannelCount(nothing): int:rt channel count
+
+---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannelcount/en/1.9)
+---
+---@return integer  # The amount of RT channels.
+function GetRTChannelCount() end
+
+--077
+--Object-Free - GetRTChannels(integer: fixture index or light userdata: reference to Fixture object[,boolean: as handles]): {array of RT channel indices or handles} or nil
+
+---
+---[Online Manual Page](https://help2.malighting.com/Page/grandMA3/lua_getrtchannels/en/1.9)
+---
+---@param fixtureID integer|lightuserdata The integer should be the index number for a (sub)fixture. The handle (lightuserdata) should relate to a (sub)fixture object.
+---@param asHandles boolean If True, then the returned table contains handles for RT Channel objects. If False then the returned table contains integers index values to the RT Channel objects.
+---@return table|nil # The returned table can be a list of RT Channel indexes or handles to the same RT Channels. Nil is returned if the RT channel is not found.
+function GetRTChannels(fixtureID, asHandles) end
+
+--078
 --Object-Free - GetSample(string: type ('MEMORY', 'CPU', 'CPUTEMP', 'GPUTEMP', 'SYSTEMP', 'FANRPM')): number: current value in percent
 
 ---
@@ -791,7 +808,14 @@ function GetRemoteVideoInfo(displayIndex) end
 ---@return number # Current value in percent.
 function GetSample(type) end
 
---076
+--079
+--Object-Free - GetScreenContent(light_userdata:handle to ScreenConfig): light_userdata:handle
+---
+---@param ScreenConfig lightuserdata Handle to the screen config.
+---@return lightuserdata # The handle to the screen content.
+function GetScreenContent(ScreenConfig) end
+
+--080
 --Object-Free - GetSelectedAttribute(): light_userdata:attribute handle
 
 ---
@@ -800,7 +824,7 @@ function GetSample(type) end
 ---@return lightuserdata # Handle to the currently selected attribute.
 function GetSelectedAttribute()end
 
---077
+--081
 --Object-Free - GetShowFileStatus(nothing): string::showfile status
 
 ---
@@ -809,7 +833,7 @@ function GetSelectedAttribute()end
 ---@return Enums.ShowFileStatus # The returned string indicate the status of the showfile - i.e. 'ShowDownloaded'.
 function GetShowFileStatus() end
 
---078
+--082
 --Object-Free - GetSubfixture(int:subfixture index): light userdata:reference to Subfixture object or nil
 
 ---
@@ -819,7 +843,7 @@ function GetShowFileStatus() end
 ---@return lightuserdata|nil # Handle to the subfixture object. Nil is returned if the index does not match a subfixture.
 function GetSubfixture(subfixtureIndex) end
 
---079
+--083
 --Object-Free - GetSubfixtureCount(nothing): int:subfixture count
 
 ---
@@ -828,25 +852,23 @@ function GetSubfixture(subfixtureIndex) end
 ---@return integer # The returned integer number represents the total amount of patched fixtures on all the stages in the show file.
 function GetSubfixtureCount() end
 
---080
+--084
 --Object-Free - GetTokenName(string:shortName): string:fullName
---ToDo
 
 ---
 ---@param shortName string This is the short version of the keyword, e.g. 'Seq'
 ---@return  string # The returned string is the full keyword
 function GetTokenName(shortName) end
 
---081
+--085
 --Object-Free - GetTokenNameByIndex(integer: token index): string:fullName
---ToDo
 
 ---
 ---@param tokenIndex integer 
 ---@return string # The returned string is the keyword matching the index
 function GetTokenNameByIndex(tokenIndex) end
 
---082
+--086
 --Object-Free - GetTopModal(nothing): light userdata: handle to top modal overlay
 --ToDo
 
@@ -854,7 +876,7 @@ function GetTokenNameByIndex(tokenIndex) end
 ---@return lightuserdata # Handle to the top model overlay UI object
 function GetTopModal() end
 
---083
+--087
 --Object-Free - GetTopOverlay(integer:display_index): light userdata: handle to top overlay on the display
 --ToDo
 
