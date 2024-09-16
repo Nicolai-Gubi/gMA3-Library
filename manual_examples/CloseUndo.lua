@@ -8,11 +8,11 @@ return function()
     Cmd("Fixture 5", MyNewUndo)
     Cmd("Fixture 7", MyNewUndo)
     --Close the undo group and store it's return in a variable
-    local closeSuccess = CloseUndo(MyNewUndo)     
+    local closeSuccess = CloseUndo(MyNewUndo)
     --Print the feedback from the closing action - 1 = Success / 0 = Failure.
-    if closeSuccess == 0 then
+    if closeSuccess == false then
         ErrPrintf("The CloseUndo was not successful")
-    elseif closeSuccess == 1 then
+    elseif closeSuccess == true then
         Printf("The CloseUndo was successful")
     else
         Printf("The CloseUndo did not return a meaningful result")

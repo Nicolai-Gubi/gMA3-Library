@@ -19,13 +19,13 @@ return function()
     -- Set the amount of fixtures.
     myAddFixtureTable.amount = 1
     -- Set the FID for the fixture.
-    myAddFixtureTable.fid = "303"
+    myAddFixtureTable.fid = "301"
     -- Set the IdType - it is not needed if the type is "Fixture".
     myAddFixtureTable.idtype = "Channel"
     -- Set the CID - Use only this when the "idtype" is different than Fixture.
-    myAddFixtureTable.cid = "303"
+    myAddFixtureTable.cid = "301"
     -- Set the name of the fixture.
-    myAddFixtureTable.name = "AddedDimmer 303"
+    myAddFixtureTable.name = "AddedDimmer 301"
     -- Create a patch table with an address.
     myAddFixtureTable.patch = {"10.001"}
 

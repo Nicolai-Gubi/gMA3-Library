@@ -4,10 +4,9 @@
 -- These are all the object api functions in the grandMA3 system. 
 -- Most are not described yet in this definition.
 --
--- This list is from version 1.9.3.3
--- There is currently 153 object function.
+-- This list is from version 2.1.1.1
 --
---
+
 
 --001
 -- AddListChildren(light_userdata:handle, light_userdata:parent[,enum{Roles}:role]): nothing
@@ -47,9 +46,25 @@
 
 --013
 -- Addr(light_userdata:handle [,light_userdata:base_handle [,bool:force parent-based address]]): text:numeric root address
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_addr.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@param baseHandle lightuserdata This handle defines a base for the returned address.
+---@param parentBasedAddr boolean If this is true, then the returned address is indexed from the base address.
+---@return string # The address of the object in a index number format - returned as a string. 
+function Addr(objectHandle, baseHandle, parentBasedAddr) end
 
 --014
 -- AddrNative(light_userdata:handle [,light_userdata:base_handle [,bool:escape names]]): text:numeric root address
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_addrnative.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@param baseHandle? lightuserdata This handle defines a base for the returned address.
+---@param escapeNames? boolean If this is true, then the returned address is in quotation marks.
+---@return string # The address of the object in a text format. 
+function AddrNative(objectHandle, baseHandle, escapeNames) end
 
 --015
 -- Append(light_userdata:handle [,string:class [,light_userdata:undo[,integer:count]]]): light_userdata:child_handle
@@ -62,6 +77,12 @@
 
 --018
 -- Children(light_userdata:handle): table of light_userdata:child_handles
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_children.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@return table # The children of the object is returned in a table of handles.
+function Children(objectHandle) end
 
 --019
 -- ClearList(light_userdata:handle): nothing
@@ -70,412 +91,476 @@
 -- ClearUIChildren(light_userdata:handle to UIObject): nothing
 
 --021
--- CmdlinePtr(light_userdata:handle, number:index(1-based)): light_userdata:child_handle
+-- CmdlineChildren(light_userdata:handle): {light_userdata:child_handles}
 
 --022
--- CommandAt(light_userdata:handle): nothing
+-- CmdlinePtr(light_userdata:handle, number:index(1-based)): light_userdata:child_handle
 
 --023
--- CommandCall(light_userdata:handle, light_userdata:dest_handle, bool:focusSearchAllowed(default:true)): nothing
+-- CommandAt(light_userdata:handle): nothing
 
 --024
--- CommandCreateDefaults(light_userdata:handle): nothing
+-- CommandCall(light_userdata:handle, light_userdata:dest_handle, bool:focusSearchAllowed(default:true)): nothing
 
 --025
--- CommandDelete(light_userdata:handle): nothing
+-- CommandCreateDefaults(light_userdata:handle): nothing
 
 --026
--- CommandStore(light_userdata:handle): nothing
+-- CommandDelete(light_userdata:handle): nothing
 
 --027
--- Compare(light_userdata:handle, light_userdata:handle): bool:isEqual, String:whatDiffers
+-- CommandStore(light_userdata:handle): nothing
 
 --028
--- Copy(light_userdata:dst_handle, light_userdata:src_handle [,light_userdata:undo]): nothing
+-- Compare(light_userdata:handle, light_userdata:handle): bool:isEqual, String:whatDiffers
 
 --029
--- Count(light_userdata:handle): number:child_count
+-- Copy(light_userdata:dst_handle, light_userdata:src_handle [,light_userdata:undo]): nothing
 
 --030
--- Create(light_userdata:handle, number:child_index(1-based) [,string:class[,light_userdata:undo]]): light_userdata:child_handle
+-- Count(light_userdata:handle): number:child_count
 
 --031
--- CurrentChild(light_userdata:handle): light_userdata:current child or nil
+-- Create(light_userdata:handle, number:child_index(1-based) [,string:class[,light_userdata:undo]]): light_userdata:child_handle
 
 --032
--- Delete(light_userdata:handle, number:child_index(1-based) [,light_userdata:undo]): nothing
+-- CurrentChild(light_userdata:handle): light_userdata:current child or nil
 
 --033
--- Dump(light_userdata:handle): string:information
-
----
----@param handle lightuserdata
----@return string
-function Dump(handle) end
+-- Delete(light_userdata:handle, number:child_index(1-based) [,light_userdata:undo]): nothing
 
 --034
--- Export(light_userdata:handle, string:file_path,string:file_name): bool:success
-
+-- Dump(light_userdata:handle): string:information
 ---
----@param handle lightuserdata
----@param filePath string
----@param fileName string
----@return boolean #
-function Export(handle,filePath, fileName) end
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_dump.html)
+---
+---@param handle lightuserdata The Object.
+---@return string # The returned string contains 
+function Dump(handle) end
 
 --035
--- Find(light_userdata:search_start_handle,string search_name [,string search_class_name]): light_userdata:found_handle
+-- Export(light_userdata:handle, string:file_path,string:file_name): bool:success
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_export.html)
+---
+---@param handle lightuserdata The Object.
+---@param filePath string The string indicating the path for the exported file.
+---@param fileName string The string indicating the file name for the exported file.
+---@return boolean # The booleans indicates if the export was asuccess.
+function Export(handle,filePath, fileName) end
 
 --036
--- FindListItemByName(light_userdata:handle,string:value): integer:1-based index
+-- Find(light_userdata:search_start_handle,string search_name [,string search_class_name]): light_userdata:found_handle
 
 --037
--- FindListItemByValueStr(light_userdata:handle,string:value): integer:1-based index
+-- FindListItemByName(light_userdata:handle,string:value): integer:1-based index
 
 --038
--- FindParent(light_userdata:search_start_handle,string search_class_name): light_userdata:found_handle
+-- FindListItemByValueStr(light_userdata:handle,string:value): integer:1-based index
 
 --039
--- FindRecursive(light_userdata:search_start_handle,string search_name [,string search_class_name]): light_userdata:found_handle
+-- FindParent(light_userdata:search_start_handle,string search_class_name): light_userdata:found_handle
 
 --040
--- FindWild(light_userdata:search_start_handle,string search_name): light_userdata:found_handle
+-- FindRecursive(light_userdata:search_start_handle,string search_name [,string search_class_name]): light_userdata:found_handle
 
 --041
--- Get(light_userdata:handle, string:property_name [,enum{Roles}:role]): string:property_value (if 'role' provided - always string)
+-- FindWild(light_userdata:search_start_handle,string search_name): light_userdata:found_handle
 
 --042
--- GetAssignedObj(light_userdata:handle): light_userdata:handle
+-- FSExtendedModeHasDots(light_userdata:handle to UIGrid (or derived), {r, c}:cell): boolean
 
 --043
--- GetChildClass(light_userdata:handle): string:class_name
+-- Get(light_userdata:handle, string:property_name [,enum{Roles}:role]): string:property_value (if 'role' provided - always string)
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_get.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@param propertyName string The name of the property.
+---@param role? integer Setting a role integer forces the returned string to be in a text format.
+---@return string # The returned string is the value of the property.
+function Get(objectHandle, propertyName, role)end
 
 --044
--- GetClass(light_userdata:handle): string:class_name
+-- GetAssignedObj(light_userdata:handle): light_userdata:handle
 
 --045
--- GetDependencies(light_userdata:handle): {light_userdata:handle}
+-- GetChildClass(light_userdata:handle): string:class_name
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_getchildclass.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@return string # The name of the class of the object's children.
+function GetChildClass(objectHandle) end
+
 
 --046
--- GetDisplay(light_userdata:handle to UIObject): light_userdata:display_handle
+-- GetClass(light_userdata:handle): string:class_name
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_getclass.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@return string # The name of the object's class.
+function GetClass(objectHandle) end
 
 --047
--- GetDisplayIndex(light_userdata:handle to UIObject): integer:display_index
+-- GetDependencies(light_userdata:handle): {light_userdata:handle}
 
 --048
--- GetExportFileName(light_userdata:handle [,bool:camel_case_to_file_name]): string:filename
+-- GetDisplay(light_userdata:handle to UIObject): light_userdata:display_handle
 
 --049
--- GetFader(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): double:value[0..100]
+-- GetDisplayIndex(light_userdata:handle to UIObject): integer:display_index
 
 --050
--- GetFaderText(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): string:text
+-- GetExportFileName(light_userdata:handle [,bool:camel_case_to_file_name]): string:filename
 
 --051
--- GetLineAt(light_userdata:handle, number:line_number): string:line_content
+-- GetFader(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): double:value[0..100]
 
 --052
--- GetLineCount(light_userdata:handle): number:count
+-- GetFaderText(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): string:text
 
 --053
--- GetListItemAppearance(light_userdata:handle,integer:index): {left={AppearanceData}, right={AppearanceData}}
+-- GetLineAt(light_userdata:handle, number:line_number): string:line_content
 
 --054
--- GetListItemButton(light_userdata:handle,integer:index): light userdata:button or nil if not visible
+-- GetLineCount(light_userdata:handle): number:count
 
 --055
--- GetListItemName(light_userdata:handle,integer:index): string:name
+-- GetListItemAppearance(light_userdata:handle,integer:index): {left={AppearanceData}, right={AppearanceData}}
 
 --056
--- GetListItemValueI64(light_userdata:handle,integer:index): integer:value
+-- GetListItemButton(light_userdata:handle,integer:index): light userdata:button or nil if not visible
 
 --057
--- GetListItemValueStr(light_userdata:handle,integer:index): string:value
+-- GetListItemName(light_userdata:handle,integer:index): string:name
 
 --058
 -- GetListItemsCount(light_userdata:handle): integer:amount of items in the list
 
 --059
--- GetListSelectedItemIndex(light_userdata:handle): integer:1-based index
+-- GetListItemValueI64(light_userdata:handle,integer:index): integer:value
 
 --060
--- GetOverlay(light_userdata:handle to UIObject): light_userdata:overlay_handle
+-- GetListItemValueStr(light_userdata:handle,integer:index): string:value
 
 --061
--- GetReferences(light_userdata:handle): {light_userdata:handle}
+-- GetListSelectedItemIndex(light_userdata:handle): integer:1-based index
 
 --062
--- GetScreen(light_userdata:handle to UIObject): light_userdata:handle
+-- GetOverlay(light_userdata:handle to UIObject): light_userdata:overlay_handle
 
 --063
--- GetUIChild(light_userdata:handle to UIObject, integer:index(1-based)): light_userdata:handle to UIObject
+-- GetReferences(light_userdata:handle): {light_userdata:handle}
 
 --064
--- GetUIChildrenCount(light_userdata:handle to UIObject): integer:count
+-- GetScreen(light_userdata:handle to UIObject): light_userdata:handle
 
 --065
--- GetUIEditor(light_userdata:handle): string:ui_editor_name
+-- GetUIChild(light_userdata:handle to UIObject, integer:index(1-based)): light_userdata:handle to UIObject
 
 --066
--- GetUISettings(light_userdata:handle): string:ui_settings_name
+-- GetUIChildrenCount(light_userdata:handle to UIObject): integer:count
 
 --067
--- GridCellExists(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
+-- GetUIEditor(light_userdata:handle): string:ui_editor_name
 
 --068
--- GridGetBase(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridBase
+-- GetUISettings(light_userdata:handle): string:ui_settings_name
 
 --069
--- GridGetCellData(light_userdata:handle to UIGrid (or derived), {r,c}:cell): {text, color={text,back}}
+-- GridCellExists(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
 
 --070
--- GridGetCellDimensions(light_userdata:handle to UIGrid (or derived), {r,c}:cell): {x,y,w,h}
+-- GridGetBase(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridBase
 
 --071
--- GridGetData(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridData
+-- GridGetCellData(light_userdata:handle to UIGrid (or derived), {r,c}:cell): {text, color={text,back}}
 
 --072
--- GridGetDimensions(light_userdata:handle to UIGrid (or derived)): {r,c}
+-- GridGetCellDimensions(light_userdata:handle to UIGrid (or derived), {r,c}:cell): {x,y,w,h}
 
 --073
--- GridGetParentRowId(light_userdata:handle to UIGrid (or derived), integer: rowId): parent row id (integer) or nil (if there's no parent)
+-- GridGetData(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridData
 
 --074
--- GridGetScrollCell(light_userdata:handle to UIGrid (or derived)): {r,c}
+-- GridGetDimensions(light_userdata:handle to UIGrid (or derived)): {r,c}
 
 --075
--- GridGetScrollOffset(light_userdata:handle to UIGrid (or derived)): {v = {index,offset}, h={index,offset}}
+-- GridGetParentRowId(light_userdata:handle to UIGrid (or derived), integer: rowId): parent row id (integer) or nil (if there's no parent)
 
 --076
--- GridGetSelectedCells(light_userdata:handle to UIGrid (or derived)): array of {r,c, r_UniqueId,r_GroupId,c_UniqueId,c_GroupId} cells in the selection
+-- GridGetScrollCell(light_userdata:handle to UIGrid (or derived)): {r,c}
 
 --077
--- GridGetSelection(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridSelection
+-- GridGetScrollOffset(light_userdata:handle to UIGrid (or derived)): {v = {index,offset}, h={index,offset}}
 
 --078
--- GridGetSettings(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridSettings
+-- GridGetSelectedCells(light_userdata:handle to UIGrid (or derived)): array of {r,c, r_UniqueId,r_GroupId,c_UniqueId,c_GroupId} cells in the selection
 
 --079
--- GridIsCellReadOnly(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
+-- GridGetSelection(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridSelection
 
 --080
--- GridIsCellVisible(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
+-- GridGetSettings(light_userdata:handle to UIGrid (or derived)): light_userdata:handle to GridSettings
 
 --081
--- GridScrollCellIntoView(light_userdata:handle to UIGrid (or derived), {r,c}:cell): nothing
+-- GridIsCellReadOnly(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
 
 --082
--- GridSetColumnSize(light_userdata:handle to UIGrid (or derived), integer: columnId, integer:size in pixels): nothing
+-- GridIsCellVisible(light_userdata:handle to UIGrid (or derived), {r,c}:cell): boolean
 
 --083
--- GridsGetExpandHeaderCell(light_userdata:handle to UIGrid (or derived)): {r,c} or nil
+-- GridMoveSelection(light_userdata:handle to UIGrid (or derived), x, y): nothing
 
 --084
--- GridsGetLevelButtonWidth(light_userdata:handle to UIGrid (or derived), {r,c}:cell): width in pixels or nil
+-- GridScrollCellIntoView(light_userdata:handle to UIGrid (or derived), {r,c}:cell): nothing
 
 --085
--- HasActivePlayback(light_userdata:handle): boolean:result
+-- GridSetColumnSize(light_userdata:handle to UIGrid (or derived), integer: columnId, integer:size in pixels): nothing
 
 --086
--- HasDependencies(light_userdata:handle): boolean:result
+-- GridsGetColumnById(light_userdata:handle to UIGrid (or derived), integer: columnId): column index or nil (if there's no such visible column)
 
 --087
--- HasEditSettingUI(light_userdata:handle): bool:result
+-- GridsGetExpandHeaderCell(light_userdata:handle to UIGrid (or derived)): {r,c} or nil
 
 --088
--- HasEditUI(light_userdata:handle): bool:result
+-- GridsGetExpandHeaderCellState(light_userdata:handle to UIGrid (or derived)): boolean or nil
 
 --089
--- HasParent(light_userdata:handle, handle:object to check): nothing
+-- GridsGetLevelButtonWidth(light_userdata:handle to UIGrid (or derived), {r,c}:cell): width in pixels or nil
 
 --090
--- HasReferences(light_userdata:handle): boolean:result
+-- GridsGetRowById(light_userdata:handle to UIGrid (or derived), integer: rowId): row index or nil (if there's no such visible row)
 
 --091
--- HookDelete(light_userdata:handle to UIObject, function:callback to invoke on deletion[,any:argument to pass by]): boolean:true on success, nil on failure
+-- HasActivePlayback(light_userdata:handle): boolean:result
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_hasactiveplayback.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@return boolean # The returned boolean indicates if the object has active playback.
+function HasActivePlayback(objectHandle) end
 
 --092
--- Import(light_userdata:handle, string:file_path,string:file_name): bool:success
+-- HasDependencies(light_userdata:handle): boolean:result
 
 --093
--- Index(light_userdata:handle): number:index
+-- HasEditSettingUI(light_userdata:handle): bool:result
 
 --094
--- InputCallFunction(light_userdata:handle, string:function name [,...parameters to function...]): <depends on function>
+-- HasEditUI(light_userdata:handle): bool:result
 
 --095
--- InputHasFunction(light_userdata:handle, string:function name): true or nil
+-- HasParent(light_userdata:handle, handle:object to check): nothing
 
 --096
--- InputRun(light_userdata:handle): nothing
+-- HasReferences(light_userdata:handle): boolean:result
 
 --097
--- InputSetAdditionalParameter(light_userdata:handle, string:parameter name, string:parameter value): nothing
+-- HookDelete(light_userdata:handle to UIObject, function:callback to invoke on deletion[,any:argument to pass by]): boolean:true on success, nil on failure
 
 --098
--- InputSetEditTitle(light_userdata:handle, string:name_value): nothing
+-- Import(light_userdata:handle, string:file_path,string:file_name): bool:success
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_import.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@param filePath string The string indicating the path for the imported file.
+---@param fileName string The string indicating the file name of the imported file.
+---@return boolean # The returned boolean indicates if the import was a successfully imported into the object.
+function Import(objectHandle, filePath, fileName) end
 
 --099
--- InputSetMaxLength(light_userdata:handle, int:length): nothing
+-- Index(light_userdata:handle): number:index
 
 --100
--- InputSetTitle(light_userdata:handle, string:name_value): nothing
+-- InputCallFunction(light_userdata:handle, string:function name [,...parameters to function...]): <depends on function>
 
 --101
--- InputSetValue(light_userdata:handle, string:value): nothing
+-- InputHasFunction(light_userdata:handle, string:function name): true or nil
 
 --102
--- Insert(light_userdata:handle, number:child_index(1-based) [,string:class [,light_userdata:undo[,integer:count]]]): light_userdata:child_handle
+-- InputRun(light_userdata:handle): nothing
 
 --103
--- IsClass(light_userdata:handle): string:class_name
+-- InputSetAdditionalParameter(light_userdata:handle, string:parameter name, string:parameter value): nothing
 
 --104
--- IsEmpty(light_userdata:handle): boolean:returns true if objects is considered 'empty'
+-- InputSetEditTitle(light_userdata:handle, string:name_value): nothing
 
 --105
--- IsEnabled(light_userdata:handle to UIObject): bool: is enabled
+-- InputSetMaxLength(light_userdata:handle, int:length): nothing
 
 --106
--- IsListItemEmpty(light_userdata:handle,integer:index): nothing
+-- InputSetTitle(light_userdata:handle, string:name_value): nothing
 
 --107
--- IsListItemEnabled(light_userdata:handle,integer:index): nothing
+-- InputSetValue(light_userdata:handle, string:value): nothing
 
 --108
--- IsValid(light_userdata:handle): bool:result
+-- Insert(light_userdata:handle, number:child_index(1-based) [,string:class [,light_userdata:undo[,integer:count]]]): light_userdata:child_handle
 
 --109
--- IsVisible(light_userdata:handle to UIObject): bool: is visible
+-- IsClass(light_userdata:handle): string:class_name
 
 --110
--- Load(light_userdata:handle, string:file_path, string:file_name): bool:success
+-- IsEmpty(light_userdata:handle): boolean:returns true if objects is considered 'empty'
 
 --111
--- MaxCount(light_userdata:handle): number:child_count
+-- IsEnabled(light_userdata:handle to UIObject): bool: is enabled
 
 --112
--- OverlaySetCloseCallback(light_userdata:handle to Overlay, callbackName:string[, ctx:anything]): nothing
+-- IsListItemEmpty(light_userdata:handle,integer:index): nothing
 
 --113
--- Parent(light_userdata:handle): light_userdata:parent_handle
+-- IsListItemEnabled(light_userdata:handle,integer:index): nothing
 
 --114
--- PrepareAccess(light_userdata:handle): nothing
+-- IsLocked(light_userdata:handle): boolean:object_is_locked
 
 --115
--- PropertyCount(light_userdata:handle): number:property_count
+-- IsValid(light_userdata:handle): bool:result
 
 --116
--- PropertyInfo(light_userdata:handle, number:property_index): {string:ReadOnly, string:ImportIgnore, string:ExportIgnore}
+-- IsVisible(light_userdata:handle to UIObject): bool: is visible
 
 --117
--- PropertyName(light_userdata:handle, number:property_index): string:property_name
+-- Load(light_userdata:handle, string:file_path, string:file_name): bool:success
 
 --118
--- PropertyType(light_userdata:handle, number:property_index): string:property_type
+-- MaxCount(light_userdata:handle): number:child_count
 
 --119
--- Ptr(light_userdata:handle, number:index(1-based)): light_userdata:child_handle
+-- OverlaySetCloseCallback(light_userdata:handle to Overlay, callbackName:string[, ctx:anything]): nothing
 
 --120
--- Remove(light_userdata:handle, number:child_index(1-based) [,light_userdata:undo]): nothing
+-- Parent(light_userdata:handle): light_userdata:parent_handle
 
 --121
--- RemoveListItem(light_userdata:handle,string:name): nothing
+-- PrepareAccess(light_userdata:handle): nothing
 
 --122
--- Resize(light_userdata:handle, number size): nothing
+-- PropertyCount(light_userdata:handle): number:property_count
 
 --123
--- Save(light_userdata:handle, string:file_path, string:file_name): bool:success
+-- PropertyInfo(light_userdata:handle, number:property_index): {string:ReadOnly, string:ImportIgnore, string:ExportIgnore}
 
 --124
--- ScrollDo(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer:scroll entity (item or area, see 'ScrollParamEntity' enum), integer: value type (absolute or relative, see 'ScrollParamValueType' enum), number: value to scroll (items - 1-based), boolean: updateOpposite side): boolean:true scroll
+-- PropertyName(light_userdata:handle, number:property_index): string:property_name
 
 --125
--- ScrollGetInfo(light_userdata:handle,integer:scroll type (see 'ScrollType' enum)): {index(1-based), offset, visibleArea, totalArea, itemsCount, itemsOnPage} or nil
+-- PropertyType(light_userdata:handle, number:property_index): string:property_type
 
 --126
--- ScrollGetItemByOffset(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: offset): integer:1-based item index
+-- Ptr(light_userdata:handle, number:index(1-based)): light_userdata:child_handle
 
 --127
--- ScrollGetItemOffset(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: 1-based item idx): integer:offset of the item or nil
+-- Remove(light_userdata:handle, number:child_index(1-based) [,light_userdata:undo]): nothing
 
 --128
--- ScrollGetItemSize(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: 1-based item idx): integer:size of the item of nil
+-- RemoveListItem(light_userdata:handle,string:name): nothing
 
 --129
--- ScrollIsNeeded(light_userdata:handle,integer:scroll type (see 'ScrollType' enum)): boolean:true if scroll of the requested type is needed
+-- Resize(light_userdata:handle, number size): nothing
 
 --130
--- SelectListItemByIndex(light_userdata:handle,integer:index(1-based)): nothing
+-- Save(light_userdata:handle, string:file_path, string:file_name): bool:success
 
 --131
--- SelectListItemByName(light_userdata:handle,string:name_value): nothing
+-- ScrollDo(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer:scroll entity (item or area, see 'ScrollParamEntity' enum), integer: value type (absolute or relative, see 'ScrollParamValueType' enum), number: value to scroll (items - 1-based), boolean: updateOpposite side): boolean:true scroll
 
 --132
--- SelectListItemByValue(light_userdata:handle,string:value): nothing
+-- ScrollGetInfo(light_userdata:handle,integer:scroll type (see 'ScrollType' enum)): {index(1-based), offset, visibleArea, totalArea, itemsCount, itemsOnPage} or nil
 
 --133
--- Set(light_userdata:handle, string:property_name, string:property_value[,Enums.ChangeLevel:override change level]): nothing
+-- ScrollGetItemByOffset(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: offset): integer:1-based item index
 
 --134
--- SetChildren(light_userdata:handle_of_parent, string:property_name, string:property_value [,bool:recursive (default: false)]): nothing
+-- ScrollGetItemOffset(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: 1-based item idx): integer:offset of the item or nil
 
 --135
--- SetContextSensHelpLink(light_userdata:handle to UIObject, string:topic name): nothing
+-- ScrollGetItemSize(light_userdata:handle,integer:scroll type (see 'ScrollType' enum), integer: 1-based item idx): integer:size of the item of nil
 
 --136
--- SetEmptyListItem(light_userdata:handle,integer:index[,bool:empty(default:true)]): nothing
+-- ScrollIsNeeded(light_userdata:handle,integer:scroll type (see 'ScrollType' enum)): boolean:true if scroll of the requested type is needed
 
 --137
--- SetEnabledListItem(light_userdata:handle,integer:index[,bool:enable(default:true)]): nothing
+-- SelectListItemByIndex(light_userdata:handle,integer:index(1-based)): nothing
 
 --138
--- SetFader(light_userdata:handle, {[double:value[0..100]], [bool:faderDisabled], [string:token(Fader*)]}): nothing
+-- SelectListItemByName(light_userdata:handle,string:name_value): nothing
 
 --139
--- SetListItemAppearance(light_userdata:handle,integer:index,{[left={...AppearanceData...}][right={...AppearanceData...}]}): nothing
+-- SelectListItemByValue(light_userdata:handle,string:value): nothing
 
 --140
--- SetListItemName(light_userdata:handle,integer:index,string:name): nothing
+-- Set(light_userdata:handle, string:property_name, string:property_value[,Enums.ChangeLevel:override change level]): nothing
 
 --141
--- SetListItemValueStr(light_userdata:handle,integer:index,string:value): nothing
-
---142
--- SetPositionHint(light_userdata:handle,integer:x,integer:y): nothing
+-- SetChildren(light_userdata:handle_of_parent, string:property_name, string:property_value [,bool:recursive (default: false)]): nothing
 
 --143
--- ShowModal(light_userdata:handle,callback:function): nothing
+-- SetContextSensHelpLink(light_userdata:handle to UIObject, string:topic name): nothing
 
 --144
--- ToAddr(light_userdata:handle): string:address
+-- SetEmptyListItem(light_userdata:handle,integer:index[,bool:empty(default:true)]): nothing
 
 --145
--- UIChildren(light_userdata:handle to UIObject): array of references to children of passed UIObject
+-- SetEnabledListItem(light_userdata:handle,integer:index[,bool:enable(default:true)]): nothing
 
 --146
--- UILGGetColumnAbsXLeft(light_userdata:handle to UILayoutGrid, idx:integer): x:integer
+-- SetFader(light_userdata:handle, {[double:value[0..100]], [bool:faderDisabled], [string:token(Fader*)]}): nothing
 
 --147
--- UILGGetColumnAbsXRight(light_userdata:handle to UILayoutGrid, idx:integer): x:integer
+-- SetListItemAppearance(light_userdata:handle,integer:index,{[left={...AppearanceData...}][right={...AppearanceData...}]}): nothing
 
 --148
--- UILGGetColumnWidth(light_userdata:handle to UILayoutGrid, idx:integer): size:integer
+-- SetListItemName(light_userdata:handle,integer:index,string:name): nothing
 
 --149
--- UILGGetRowAbsYBottom(light_userdata:handle to UILayoutGrid, idx:integer): y:integer
+-- SetListItemValueStr(light_userdata:handle,integer:index,string:value): nothing
 
 --150
--- UILGGetRowAbsYTop(light_userdata:handle to UILayoutGrid, idx:integer): y:integer
+-- SetPositionHint(light_userdata:handle,integer:x,integer:y): nothing
 
 --151
--- UILGGetRowHeight(light_userdata:handle to UILayoutGrid, idx:integer): size:integer
+-- ShowModal(light_userdata:handle,callback:function): nothing
 
 --152
--- WaitChildren(light_userdata:handle to UIObject, integer:expected amount of children, [, number:seconds to wait]): boolean:true on success, nil on timeout or if object doesn't exist
+-- ToAddr(light_userdata:handle): string:address
+---
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_object_toaddr.html)
+---
+---@param objectHandle lightuserdata The Object.
+---@return string # The address for the object as a string.
+function ToAddr (objectHandle) end
 
 --153
+-- UIChildren(light_userdata:handle to UIObject): array of references to children of passed UIObject
+
+--154
+-- UILGGetColumnAbsXLeft(light_userdata:handle to UILayoutGrid, idx:integer): x:integer
+
+--155
+-- UILGGetColumnAbsXRight(light_userdata:handle to UILayoutGrid, idx:integer): x:integer
+
+--156
+-- UILGGetColumnWidth(light_userdata:handle to UILayoutGrid, idx:integer): size:integer
+
+--157
+-- UILGGetRowAbsYBottom(light_userdata:handle to UILayoutGrid, idx:integer): y:integer
+
+--158
+-- UILGGetRowAbsYTop(light_userdata:handle to UILayoutGrid, idx:integer): y:integer
+
+--159
+-- UILGGetRowHeight(light_userdata:handle to UILayoutGrid, idx:integer): size:integer
+
+--160
+-- WaitChildren(light_userdata:handle to UIObject, integer:expected amount of children, [, number:seconds to wait]): boolean:true on success, nil on timeout or if object doesn't exist
+
+--161
 -- WaitInit(light_userdata:handle to UIObject[, number:seconds to wait[, bool: force to re-init, default - false]]): boolean:true on success, nil on timeout or if object doesn't exist
