@@ -10,7 +10,7 @@ return function()
     -- Store the handle of the selected datapool.
     local myDataPool = DataPool()
     -- Prints the address of the selected datapool.
-    Printf(myDataPool:Addr())
+    Printf("The datapool address is: " ..myDataPool:Addr())
     
     --- The follwoing example uses the name of a sequence in the sequence pool. 
     --- Please adjust the "Default" name in the next line to match an existing named sequence.

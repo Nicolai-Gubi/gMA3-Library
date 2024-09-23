@@ -10,9 +10,11 @@ return function()
     -- Closing the undo group and store it's return in a variable.
     local closeSuccess = CloseUndo(MyNewUndo)
     -- Print the feedback from the closing action - 1 = Success / 0 = Failure.
-    if (closeSuccess == 1) then
-        Printf("The undo was closed successfully")
+    if closeSuccess == false then
+        ErrPrintf("The CloseUndo was not successful")
+    elseif closeSuccess == true then
+        Printf("The CloseUndo was successful")
     else
-        Printf("The undo was not closed correctly")
+        Printf("The CloseUndo did not return a meaningful result")
     end
 end
