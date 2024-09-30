@@ -325,7 +325,7 @@ function DevMode3d() end
 --Object-Free - DirList(string:path[ ,string:filter]): table of {name:string, size:int, time:int}
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_dirlist.html)
 ---
 ---@param path string
 ---@param filters? string
