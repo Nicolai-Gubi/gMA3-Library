@@ -27,7 +27,7 @@
 --Object-Free - AddFixtures({'mode'=light_userdata:dmx_mode, 'amount'=integer:amount[, 'undo'=string:undo_text][, 'parent'=light_userdata:handle][, 'insert_index'=integer:value][, 'idtype'=string:idtype][, 'cid'=string:cid][, 'fid'=string:fid][, 'name'=string:name][, 'layer'=string:layer][, 'class'=string:class][, 'patch'={table 1..8: string:address}]}): boolean:success or nothing
 
 ---
----[Online Manual Page]https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_addfixtures.html
+---[Online Manual Page]https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_addfixtures.html
 ---
 ---@param fixtureTable tableFixture
 ---@return boolean|nil # Returns true if success. return nil is failure.
@@ -37,7 +37,7 @@ function AddFixtures(fixtureTable) end
 --Object-Free - AddonVars(string:addon_name): light_userdata:addon_variables
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_addonvars.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_addonvars.html)
 ---
 ---@param addon_name string The name of the Addon.
 ---@return lightuserdata # Returns the handle to the addon variable set.
@@ -48,7 +48,7 @@ function AddonVars(addon_name) end
 --Object-Free - BuildDetails(nothing): table:build_details
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_builddetails.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_builddetails.html)
 ---
 ---@return table # Returns a table with the build details.
 function BuildDetails() end
@@ -57,7 +57,7 @@ function BuildDetails() end
 --Object-Free - CheckDMXCollision(light_userdata:dmx_mode, string:dmx_address[ ,integer:count[ ,integer:break_index]]): boolean:no_collision_found
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_checkdmxcollision.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_checkdmxcollision.html)
 ---
 ---@param dmxMode lightuserdata
 ---@param dmxAddress string
@@ -70,7 +70,7 @@ function CheckDMXCollision(dmxMode, dmxAddress, count, breakIndex) end
 --Object-Free - CheckFIDCollision(integer:fid[, integer:count[, integer:type]]): boolean:no_collision_found
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_checkfidcollision.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_checkfidcollision.html)
 ---
 ---@param FID integer
 ---@param count? integer|nil
@@ -82,7 +82,7 @@ function CheckFIDCollision(FID, count, type) end
 --Object-Free - ClassExists(string:class_name): boolean:result
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_classexists.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_classexists.html)
 ---
 ---@param class_name string A string containing a single word that could be a class.
 ---@return boolean # Returns true if the class exists.
@@ -92,7 +92,7 @@ function ClassExists(class_name) end
 --Object-Free - CloseAllOverlays(nothing): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_closealloverlays.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_closealloverlays.html)
 --- Closes any open overlays on any screen.
 ---
 ---@return nil
@@ -102,7 +102,7 @@ function CloseAllOverlays() end
 --Object-Free - CloseUndo(light_userdata:undo_handle): boolean:closed (true if was closed, false - if it's still in use)
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_closeundo.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_closeundo.html)
 ---
 ---@param undoHandle lightuserdata This should be a handle for an existing undo object.
 ---@return boolean # Returns true if the undo object was closed, false if it could not be closed.
@@ -112,7 +112,7 @@ function CloseUndo(undoHandle) end
 --Object-Free - Cmd(string:formatted_command[ ,light_userdata:undo], ...): string:command_execution_result ('Ok', 'Syntax Error', 'Illegal Command', ...)
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_cmd.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_cmd.html)
 ---
 ---@generic T
 ---@param format string The string input is printed in the Command Line History and the System Monitor. It allows for format specifiers.
@@ -125,7 +125,7 @@ function Cmd(format, undo, ...) end
 --Object-Free - CmdIndirect(string:command[, light_userdata:undo[, light_userdata:target]]): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_cmdindirect.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_cmdindirect.html)
 ---
 ---@param cmd string Command to be executed.
 ---@param undo? lightuserdata|nil Handle to an undo object.
@@ -136,7 +136,7 @@ function CmdIndirect(cmd, undo, target) end
 --Object-Free - CmdIndirectWait(string:command[, light_userdata:undo[, light_userdata:target]]): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_cmdindirectwait.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_cmdindirectwait.html)
 ---
 ---@param cmd string Command to be executed.
 ---@param undo? lightuserdata|nil Handle to an undo object.
@@ -147,7 +147,7 @@ function CmdIndirectWait(cmd, undo, target) end
 --Object-Free - CmdObj(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_cmdobj.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_cmdobj.html)
 ---
 ---@return lightuserdata # Handle to the command object.
 function CmdObj() end
@@ -170,7 +170,7 @@ function ColMeasureDeviceDoMeasurement() end
 --Object-Free - ConfigTable(nothing): table:config_details
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_configtable.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_configtable.html)
 ---
 ---@return table # Returns a Key-Value table with the configuration details.
 function ConfigTable() end
@@ -179,7 +179,7 @@ function ConfigTable() end
 --Object-Free - Confirm([string:title [,string:message [,integer:display_index [,boolean:showCancel]]]]): boolean:result
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_confirm.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_confirm.html)
 ---
 ---@param title? string This string is the title for the pop-up.
 ---@param message? string|nil This strinf is the message text in the pop-up.
@@ -214,7 +214,7 @@ function CreateMultiPatch(fixtureHandleArray, count, undoText) end
 --Object-Free - CreateUndo(string:undo_text): light_userdata:undo_handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_createundo.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_createundo.html)
 ---
 ---@param undoText string Identifying name of the undo object.
 ---@return lightuserdata # Handle for the undo object.
@@ -224,7 +224,7 @@ function CreateUndo(undoText) end
 --Object-Free - CurrentEnvironment(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_currentenvironment.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_currentenvironment.html)
 ---
 ---@return lightuserdata # Handle to the currently active environment object.
 function CurrentEnvironment() end
@@ -233,7 +233,7 @@ function CurrentEnvironment() end
 --Object-Free - CurrentExecPage(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_currentexecpage.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_currentexecpage.html)
 ---
 ---@return lightuserdata # Handle to the currently executor page.
 function CurrentExecPage() end
@@ -242,7 +242,7 @@ function CurrentExecPage() end
 --Object-Free - CurrentProfile(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_currentprofile.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_currentprofile.html)
 ---
 ---@return lightuserdata # Handle to the currently active profile object.
 function CurrentProfile() end
@@ -251,7 +251,7 @@ function CurrentProfile() end
 --Object-Free - CurrentScreenConfig(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_currentscreenconfig.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_currentscreenconfig.html)
 ---
 ---@return lightuserdata # Handle to the current users screen configuration.
 function CurrentScreenConfig() end
@@ -260,7 +260,7 @@ function CurrentScreenConfig() end
 --Object-Free - CurrentUser(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_currentuser.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_currentuser.html)
 ---
 ---@return lightuserdata # Handle to the currently active user object.
 function CurrentUser() end
@@ -269,7 +269,7 @@ function CurrentUser() end
 --Object-Free - DataPool(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_datapool.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_datapool.html)
 ---
 ---@return lightuserdata # Handle to the currently active DataPool object.
 function DataPool() end
@@ -278,7 +278,7 @@ function DataPool() end
 --Object-Free - DefaultDisplayPositions(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_defaultdisplaypositions.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_defaultdisplaypositions.html)
 ---
 ---@return lightuserdata # Handle to the DefaultDisplayPositions object.
 function DefaultDisplayPositions() end
@@ -287,7 +287,7 @@ function DefaultDisplayPositions() end
 --Object-Free - DelVar(light_userdata:variables, string:varname): boolean:success
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_delvar.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_delvar.html)
 ---
 ---@param variableSet lightuserdata Handle to a set of variables (Global or User).
 ---@param variableName string Name of the variable to be deleted.
@@ -298,7 +298,7 @@ function DelVar(variableSet, variableName) end
 --Object-Free - DeskLocked(nothing): boolean:desk_is_locked
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_desklocked.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_desklocked.html)
 ---
 ---@return boolean # True if the station is locked - False if it is not locked.
 function DeskLocked() end
@@ -307,7 +307,7 @@ function DeskLocked() end
 --Object-Free - DeviceConfiguration(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_deviceconfiguration.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_deviceconfiguration.html)
 ---
 ---@return lightuserdata # Handle to the Device Configuration {Root()[21]}
 function DeviceConfiguration() end
@@ -336,7 +336,7 @@ function DirList(path, filters) end
 --Object-Free - DrawPointer(integer:display_index, {x,y}:position[, number:duration]): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_drawpointer.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_drawpointer.html)
 ---
 ---@param displayIndex integer This integer needs to an index for a display.
 ---@param position table This kay-value table needs to have 'x' and 'y' keys with values indicating a position on the display.
@@ -347,7 +347,7 @@ function DrawPointer(displayIndex, position, duration) end
 --Object-Free - DumpAllHooks(nothing): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_dumpallhooks.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_dumpallhooks.html)
 ---
 --- Prints a list of all hooks in the system.
 function DumpAllHooks() end
@@ -356,7 +356,7 @@ function DumpAllHooks() end
 --Object-Free - Echo(string:formatted_command ...): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_echo.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_echo.html)
 ---
 ---@generic T
 ---@param format string The string input is printed in the System Monitor. It allows for format specifiers.
@@ -367,7 +367,7 @@ function Echo(format, ...) end
 --Object-Free - ErrEcho(string:formatted_command ...): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_errecho.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_errecho.html)
 ---
 ---@generic T
 ---@param format string The string input is printed in the System Monitor in red. It allows for format specifiers.
@@ -378,7 +378,7 @@ function ErrEcho(format, ...) end
 --Object-Free - ErrPrintf(string:formatted_command ...): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_errprintf.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_errprintf.html)
 ---
 ---@generic T
 ---@param format string The string input is printed in red in the Command Line History and the System Monitor. It allows for format specifiers.
@@ -389,7 +389,7 @@ function ErrPrintf(format, ...) end
 --Object-Free - Export(string:file_name, table:export_data): boolean:success
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_export.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_export.html)
 ---
 ---@param filename string The filename for the exported file (XML format) including the path.
 ---@param exportData table A table containing the data to be exported.
@@ -400,7 +400,7 @@ function Export(filename, exportData) end
 --Object-Free - ExportCSV(string:file_name, table:export_data): boolean:success
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_exportcsv.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_exportcsv.html)
 ---NOTE: The CSV is not formattet correctly. All data is in their own column in a single row.
 ---
 ---@param filename string The filename for the exported file (CSV format) including the path.
@@ -412,7 +412,7 @@ function ExportCSV(filename, exportData) end
 --Object-Free - ExportJson(string:file_name, table:export_data): boolean:success
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_exportjson.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_exportjson.html)
 ---NOTE: It does not format the exportData table in a proper JSON format. 
 ---
 ---@param filename string The filename for the exported file (JSON format) including the path.
@@ -424,7 +424,7 @@ function ExportJson(filename, exportData) end
 --Object-Free - FileExists(string:path): boolean:result
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_fileexists.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_fileexists.html)
 ---
 ---@param path string The string should be contain the path and filename for the file.
 ---@return boolean # The 
@@ -465,7 +465,7 @@ function FindNextFocus(backwards, reason) end
 --Object-Free - FindTexture(string:texture name): light userdata:handle to texture found
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_findtexture.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_findtexture.html)
 ---
 ---@param textureName string Name of the UI texture object/icon.
 ---@return lightuserdata # Handle to texture matching the string input
@@ -475,7 +475,7 @@ function FindTexture(textureName) end
 --Object-Free - FirstDmxModeFixture(light_userdata:dmxmode): light_userdata:fixture
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_firstdmxmodefixture.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_firstdmxmodefixture.html)
 ---
 ---@param dmxMode lightuserdata
 ---@return lightuserdata # Handle to the first fixture matching the DMX Mode.
@@ -485,7 +485,7 @@ function FirstDmxModeFixture(dmxMode) end
 --Object-Free - FixtureType(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_fixturetype.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_fixturetype.html)
 ---
 ---@return lightuserdata 
 function FixtureType() end
@@ -494,7 +494,7 @@ function FixtureType() end
 --Object-Free - FromAddr(string:address[, light_userdata:base_handle]): light_userdata:handl
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_fromaddr.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_fromaddr.html)
 ---
 ---@param address string A string identifying an object. It can be a numbered or named address.
 ---@param baseHandle? lightuserdata This optional handle can specify a different base location than "Root". It still needs to be a base location in the address path from the root to the object.
@@ -515,7 +515,7 @@ function FSExtendedModeHasDots(UIGridHandle, CellTable) end
 ---Object-Free - GetApiDescriptor(nothing): table of {string:function_name, string:arguments, string:return_values}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getapidescriptor.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getapidescriptor.html)
 ---
 ---@return table # A table with the factory description of the object free functions.
 function GetApiDescriptor() end
@@ -524,7 +524,7 @@ function GetApiDescriptor() end
 --Object-Free - GetAttributeByUIChannel(integer:ui channel index): light_userdata:reference_to_attribute
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getattributebyuichannel.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getattributebyuichannel.html)
 ---
 ---@param uiChannelIndex integer This index integer identifies a UI Channel (Parameter List).
 ---@return lightuserdata|nil # Handle to the attribute.
@@ -542,7 +542,7 @@ function GetAttributeColumnId(handle, attribute) end
 --Object-Free - GetAttributeCount(nothing): integer:attribute_count
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getattributecount.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getattributecount.html)
 ---
 ---@return integer # The amount of attributes.
 function GetAttributeCount() end
@@ -551,7 +551,7 @@ function GetAttributeCount() end
 --Object-Free - GetAttributeIndex(string:attribute_name): integer:attribute_index
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getattributeindex.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getattributeindex.html)
 ---
 ---@param attributeName string The string matching the attribute system name.
 ---@return integer # The returned integer is the index of the attribute.
@@ -561,7 +561,7 @@ function GetAttributeIndex(attributeName) end
 --Object-Free - GetButton(light_userdata:usb_device_object_handle): table of boolean:state
 
 ---
----Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getbutton.html)
+---Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getbutton.html)
 ---
 ---@param usbDeviceHandle lightuserdata Handle to an USB device
 ---@return table # A table of 512 booleans indicating if buttons are pressed
@@ -571,7 +571,7 @@ function GetButton(usbDeviceHandle) end
 --Object-Free - GetChannelFunction(integer:ui_channel_index, integer:attribute_index): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getchannelfunction.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getchannelfunction.html)
 ---
 ---@param uiChannelIndex integer The index for a specific UI Channel (Parameter List).
 ---@param attributeIndex integer The index for an attribute (Attribute Definitions).
@@ -582,7 +582,7 @@ function GetChannelFunction(uiChannelIndex, attributeIndex) end
 --Object-Free - GetChannelFunctionIndex(integer:ui_channel_index, integer:attribute_index): integer:channel_function_index
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getchannelfunctionindex.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getchannelfunctionindex.html)
 ---
 ---@param uiChannelIndex integer The index for a specific UI Channel (Parameter List).
 ---@param attributeIndex integer The index for an attribute (Attribute Definitions).
@@ -593,7 +593,7 @@ function GetChannelFunctionIndex(uiChannelIndex, attributeIndex) end
 --Object-Free - GetClassDerivationLevel(string:class_name): integer:result or nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getclassderivationlevel.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getclassderivationlevel.html)
 ---
 ---@param className string This string should be the name of an existing class.
 ---@return integer # The returned integer indicates the class derivation level.
@@ -603,7 +603,7 @@ function GetClassDerivationLevel(className) end
 --Object-Free - GetCurrentCue(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getcurrentcue.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getcurrentcue.html)
 ---
 ---@return lightuserdata # The handle to the last activated cue in the selected sequence. 
 function GetCurrentCue() end
@@ -612,7 +612,7 @@ function GetCurrentCue() end
 --Object-Free - GetDebugFPS(nothing): float:fps
 --ToDo
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getdebugfps.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getdebugfps.html)
 ---
 ---@return number # The returned number is a float indicating the frames per second for the displays.
 function GetDebugFPS() end
@@ -621,7 +621,7 @@ function GetDebugFPS() end
 --Object-Free - GetDisplayByIndex(integer:display_index): light_userdata:display_handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getdisplaybyindex.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getdisplaybyindex.html)
 ---
 ---@param displayIndex integer The integer needs to be an index number for one of the displays.
 ---@return lightuserdata # Handle to the display matching the index.
@@ -631,7 +631,7 @@ function GetDisplayByIndex(displayIndex) end
 --Object-Free - GetDisplayCollect(nothing): light_userdata:handle to DisplayCollect
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getdisplaycollect.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getdisplaycollect.html)
 ---
 ---Root().GraphicsRoot.PultCollect["Pult 1"].DisplayCollect
 ---@return lightuserdata # Handle to the Display Collect object.
@@ -641,7 +641,7 @@ function GetDisplayCollect() end
 --Object-Free - GetDMXUniverse(integer:universe[ ,boolean:modePercent]): {integer:dmx_values}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getdmxuniverse.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getdmxuniverse.html)
 ---
 ---@param universe integer The DMX universe [1-1024].
 ---@param modePercent? boolean This bool indicates if the returned table is in DMX value [0-255] (False - default) or percent [0-100] (True). 
@@ -652,7 +652,7 @@ function GetDMXUniverse(universe, modePercent) end
 --Object-Free - GetDMXValue(integer:address[ ,integer:universe, boolean:mode_percent]): integer:dmx_value
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getdmxvalue.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getdmxvalue.html)
 ---
 ---@param address integer The DMX address in absolute address or if a universe is provided, then from 1 to 512.
 ---@param universe? integer The DMX universe [1-1024].
@@ -664,7 +664,7 @@ function GetDMXValue(address, universe, modePercent) end
 --Object-Free - GetExecutor(integer:executor): light_userdata:executor, light_userdata:page
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getexecutor.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getexecutor.html)
 ---
 ---@param execNumber integer The integer for an executor.
 ---@return lightuserdata executorHandle Handle to the executor.
@@ -675,7 +675,7 @@ function GetExecutor(execNumber) end
 --Object-Free - GetFocus(nothing): light_userdata:display_handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getfocus.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getfocus.html)
 ---
 ---@return lightuserdata # Handle to the object that currently has focus.
 function GetFocus() end
@@ -684,7 +684,7 @@ function GetFocus() end
 --Object-Free - GetFocusDisplay(nothing): light_userdata:display_handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getfocusdisplay.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getfocusdisplay.html)
 ---
 ---@return lightuserdata # Handle to display that currently got focus.
 function GetFocusDisplay() end
@@ -693,7 +693,7 @@ function GetFocusDisplay() end
 --Object-Free - GetObjApiDescriptor(nothing): table of {string:function_name, string:arguments, string:return_values}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getobjapidescriptor.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getobjapidescriptor.html)
 ---
 ---@return table # A table with the factory description of the object functions.
 function GetObjApiDescriptor() end
@@ -709,7 +709,7 @@ function GetObject(address) end
 --Object-Free - GetPath(string:path_type or integer:path_type(Enums.PathType)[ ,boolean:create]): string:path
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getpath.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getpath.html)
 ---
 ---@param pathType string|integer The string should indicate a folder name. If integer, then it should be an indicating index number from 'Enum.PathType'.
 ---@param create? boolean This boolean indicates if the folder should be created (True) if it does not exists - only works with string path type.
@@ -720,7 +720,7 @@ function GetPath(pathType, create) end
 --Object-Free - GetPathOverrideFor(string:path type or integer:path_type(Enums.PathType), string:path[ ,boolean:create]): string:overwritten_path
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getpathoverridefor.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getpathoverridefor.html)
 ---
 ---@param pathType string|integer The string should indicate a folder name. If integer, then it should be an indicating index number from 'Enum.PathType'.
 ---@param path string The base path in a string format.
@@ -732,7 +732,7 @@ function GetPathOverrideFor(pathType, path, create) end
 --Object-Free - GetPathSeparator(nothing): string:seperator
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getpathseparater.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getpathseparater.html)
 ---
 ---@return string # The returned string is '/'(Linux) or '\\'(Windows) depending on the operating system.
 function GetPathSeparator() end
@@ -741,7 +741,7 @@ function GetPathSeparator() end
 --Object-Free - GetPathType(light_userdata:target_object[ ,integer:content_type (Enums.PathContentType)]): string:path_type_name
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getpathtype.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getpathtype.html)
 ---
 ---@param targetObject lightuserdata This handle should be for the object for which the path is needed.
 ---@param contentType? integer This integer must be one of possible integers in the enums.PathContenType. 0 = System path, 1 = User path, or 2 = Mixed path 
@@ -752,7 +752,7 @@ function GetPathType(targetObject, contentType) end
 --Object-Free - GetPresetData(light_userdata:preset_handle[, boolean:phasers_only(default=false)[, boolean:by_fixtures(default=true)]]): table:phaser_data
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getpresetdata.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getpresetdata.html)
 ---
 ---@param presetHandle lightuserdata This should be a handle to a preset
 ---@param phasersOnly? boolean If this is true then the returned table only contains Phaser values. Default is False
@@ -811,7 +811,7 @@ function GetRemoteVideoInfo() end
 --Object-Free - GetRTChannel(integer:rt_channel_index): table:rt_channel_descriptor
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getrtchannel.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getrtchannel.html)
 ---
 ---@param rtChannelIndex integer The integer should be the index number for an RT Channel.
 ---@return table|nil # The returned table contains all relevant information about the RT channel. Nil is returned if the index doesn't match an RT channel.
@@ -821,7 +821,7 @@ function GetRTChannel(rtChannelIndex) end
 --Object-Free - GetRTChannelCount(nothing): integer:rt_channel_count
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getrtchannelcount.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getrtchannelcount.html)
 ---
 ---@return integer  # The amount of RT channels.
 function GetRTChannelCount() end
@@ -830,7 +830,7 @@ function GetRTChannelCount() end
 --Object-Free - GetRTChannels(integer:fixture index or light_userdata: reference_to_fixture_object[, boolean:return_as_handles]): {integer:rt_channels} or {light_userdata:rt_channels}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getrtchannels.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getrtchannels.html)
 ---
 ---@param fixtureID integer|lightuserdata The integer should be the index number for a (sub)fixture. The handle (lightuserdata) should relate to a (sub)fixture object.
 ---@param asHandles boolean If True, then the returned table contains handles for RT Channel objects. If False then the returned table contains integers index values to the RT Channel objects.
@@ -841,7 +841,7 @@ function GetRTChannels(fixtureID, asHandles) end
 --Object-Free - GetSample(string:type('MEMORY', 'CPU', 'CPUTEMP', 'GPUTEMP', 'SYSTEMP', 'FANRPM')): integer:current_value_in_percent
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getsample.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getsample.html)
 ---
 ---@param sampleType string The string should be one of the valid input types.
 ---|"'MEMORY'"  # 
@@ -857,7 +857,7 @@ function GetSample(sampleType) end
 --Object-Free - GetScreenContent(light_userdata:handle to ScreenConfig): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getscreencontent.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getscreencontent.html)
 ---
 ---@param screenConfig lightuserdata Handle to a screen configuration
 ---@return lightuserdata # Handle to the screen content
@@ -867,7 +867,7 @@ function GetScreenContent(screenConfig) end
 --Object-Free - GetSelectedAttribute(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getselectedattribute.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getselectedattribute.html)
 ---
 ---@return lightuserdata # Handle to the currently selected attribute.
 function GetSelectedAttribute()end
@@ -876,7 +876,7 @@ function GetSelectedAttribute()end
 --Object-Free - GetShowFileStatus(nothing): string:showfile_status
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getshowfilestatus.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getshowfilestatus.html)
 ---
 ---@return Enums.ShowFileStatus # The returned string indicate the status of the showfile - i.e. 'ShowDownloaded'.
 function GetShowFileStatus() end
@@ -885,7 +885,7 @@ function GetShowFileStatus() end
 --Object-Free - GetSubfixture(integer:subfixture_index): light_userdata:subfixture
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getsubfixture.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getsubfixture.html)
 ---
 ---@param subfixtureIndex integer The integer shoudl be the patch index number for a fixture.
 ---@return lightuserdata|nil # Handle to the subfixture object. Nil is returned if the index does not match a subfixture.
@@ -895,7 +895,7 @@ function GetSubfixture(subfixtureIndex) end
 --Object-Free - GetSubfixtureCount(nothing): integer:subfixture_count
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getsubfixturecount.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getsubfixturecount.html)
 ---
 ---@return integer # The returned integer number represents the total amount of patched fixtures on all the stages in the show file.
 function GetSubfixtureCount() end
@@ -904,7 +904,7 @@ function GetSubfixtureCount() end
 --Object-Free - GetTokenName(string:shortName): string:full_name
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_gettokenname.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_gettokenname.html)
 ---
 ---@param shortName string This is the short version of the keyword, e.g. 'Seq'
 ---@return  string # The returned string is the full keyword
@@ -914,7 +914,7 @@ function GetTokenName(shortName) end
 --Object-Free - GetTokenNameByIndex(integer:token_index): string:full_name
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_gettokennamebyindex.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_gettokennamebyindex.html)
 ---
 ---@param tokenIndex integer The index identifies a token in a build-in table
 ---@return string # The returned string is the keyword matching the index
@@ -924,7 +924,7 @@ function GetTokenNameByIndex(tokenIndex) end
 --Object-Free - GetTopModal(nothing): light userdata:handle to top modal overlay
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_gettopmodal.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_gettopmodal.html)
 ---
 ---@return lightuserdata # Handle to the top model overlay UI object
 function GetTopModal() end
@@ -933,7 +933,7 @@ function GetTopModal() end
 --Object-Free - GetTopOverlay(integer:display_index): light userdata:handle to top overlay on the display
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_gettopoverlay.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_gettopoverlay.html)
 ---
 ---@param displayIndex integer
 ---@return lightuserdata # Handle to the top overlay on the display matching the index
@@ -955,7 +955,7 @@ function GetUIChannel(uiChannel, attribute) end
 --Object-Free - GetUIChannelCount(nothing): integer:ui_channel_count
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getuichannelcount.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getuichannelcount.html)
 ---
 ---@return integer # The intiger indicates the amount of UI Channels.
 function GetUIChannelCount() end
@@ -964,7 +964,7 @@ function GetUIChannelCount() end
 --Object-Free - GetUIChannelIndex(integer:subfixture_index, integer:attribute_index): integer:ui_channel_index
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getuichannelindex.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getuichannelindex.html)
 ---
 ---@param subfixtureIndex integer The integer identifying the subfixture.
 ---@param attributeIndex integer The integer identifying the attribute (Attribute Definitions).
@@ -975,7 +975,7 @@ function GetUIChannelIndex(subfixtureIndex, attributeIndex) end
 --Object-Free - GetUIChannels(integer:subfixture_index or light_userdata: subfixture_handle[, boolean:return_as_handles]): {integer:ui_channels} or {light_userdata:ui_channels}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getuichannels.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getuichannels.html)
 ---
 ---@param subfixture integer|lightuserdata The integer or handle identifying the subfixture.
 ---@param asHandles? boolean This indicates if the returned table should contain handles (True) or index integers (False - default).
@@ -986,7 +986,7 @@ function GetUIChannels(subfixture, asHandles) end
 --Object-Free - GetUIObjectAtPosition(integer:display_index, {x,y}:position): light_userdata:handle to UI object or nil
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getuiobjectatposition.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getuiobjectatposition.html)
 --- 
 ---@param displayIndex integer This is the display index number
 ---@param position table --{x,y} This table should have two named objects "x" and "y" indicating the position on the display
@@ -997,7 +997,7 @@ function GetUIObjectAtPosition(displayIndex, position) end
 --Object-Free - GetVar(light_userdata:variables, string:varname): value
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_getvar.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_getvar.html)
 ---
 ---@param variableSet lightuserdata This is the handle to the variable set - GlobalVars(), UserVars(), AddonVars(), PluginVars()
 ---@param variableName string The name of the variable
@@ -1008,7 +1008,7 @@ function GetVar(variableSet, variableName) end
 --Objects-Free - GlobalVars(nothing): light_userdata:global_variables
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_globalvars.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_globalvars.html)
 ---
 ---@return lightuserdata # Returns the handle to the global variable set.
 function GlobalVars() end
@@ -1017,7 +1017,7 @@ function GlobalVars() end
 --Object-Free - HandleToInt(light_userdata:handle): integer:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_handletoint.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_handletoint.html)
 ---
 ---@param handle lightuserdata The handle of the object.
 ---@return integer # The returned integer is the handle converted to an integer.
@@ -1027,7 +1027,7 @@ function HandleToInt(handle) end
 --Object-Free - HandleToStr(light_userdata:handle): string:handle(in H#... format)
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_handletostring.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_handletostring.html)
 ---
 ---@param handle lightuserdata The handle of the object.
 ---@return string # The returned string is the handle translated into a hexadecimal format Starting with 'H#' followed by the hex string.
@@ -1037,7 +1037,7 @@ function HandleToStr(handle) end
 --Object-Free - HookObjectChange(function:callback, light_userdata:handle, light_userdata:plugin_handle[, light_userdata:target]): integer:hook_id
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_hookobjectchange.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_hookobjectchange.html)
 ---
 ---@param callback function
 ---@param handle lightuserdata
@@ -1049,7 +1049,7 @@ function HookObjectChange(callback, handle, pluginHandle, target) end
 --Object-Free - HostOS(nothing): string:ostype
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_hostos.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_hostos.html)
 ---
 ---@return string # A string is returned indicating the operating system e.g. 'Windows' or 'Linux'.
 function HostOS() end
@@ -1058,7 +1058,7 @@ function HostOS() end
 --Object-Free - HostSubType(nothing): string:hostsubtype
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_hostsubtype.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_hostsubtype.html)
 ---
 ---@return string # A string is returned indicating the station sub type e.g. 'FullSize' or 'Light'.
 function HostSubType() end
@@ -1067,7 +1067,7 @@ function HostSubType() end
 --Object-Free - HostType(nothing): string:hosttype
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_hosttype.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_hosttype.html)
 ---
 ---@return string # A string is returned indicating the station type e.g. 'Console' or 'onPC'.
 function HostType() end
@@ -1076,7 +1076,7 @@ function HostType() end
 --Object-Free - Import(string:file_name): table:content
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_import.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_import.html)
 ---
 ---@param filename string
 ---@return table
@@ -1086,7 +1086,7 @@ function Import(filename) end
 --Object-Free - IncProgress(integer:progressbar_index[, integer:delta]): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_incprogress.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_incprogress.html)
 ---
 ---@param handle lightuserdata The handle for the progress bar.
 ---@param delta? integer The desired value change for the progress. This can be a negative value to decrease the value. The default value is "1".
@@ -1096,7 +1096,7 @@ function IncProgress(handle, delta) end
 --Object-Free - IntToHandle(integer:handle): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_inttohandle.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_inttohandle.html)
 ---
 ---@param luaInteger integer The integer that correlates to an object's handle.
 ---@return lightuserdata # The returned handle of the object correlates with the integer.
@@ -1106,7 +1106,7 @@ function IntToHandle(luaInteger) end
 --Object-Free - IsClassDerivedFrom(string:derived_name, string:base_name): boolean:result
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_isclassderivedfrom.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_isclassderivedfrom.html)
 ---
 ---@param derivedName string Name of class to check.
 ---@param baseName string Name of class that would be the base class.
@@ -1117,7 +1117,7 @@ function IsClassDerivedFrom(derivedName,baseName) end
 --Object-Free - IsObjectValid(light_userdata:handle): boolean:valid
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_isobjectvalid.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_isobjectvalid.html)
 ---
 ---@param handle lightuserdata The parameter should be the handle to a possible object.
 ---@return boolean|nil # The returned value is a boolean True if the handle is a valid object or it returns nil if it is not a valid object.
@@ -1145,7 +1145,7 @@ function Keyboard(displayIndex, type, char, shift, ctrl, alt, numlock) end
 --Object-Free - KeyboardObj(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_keyboardobj.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_keyboardobj.html)
 --- 
 ---Root().GraphicsRoot.PultCollect["Pult 1"].Devices["Keyboard 2"]
 ---@return lightuserdata # Handle to the first found keyboard object.
@@ -1164,7 +1164,7 @@ function LoadExecConfig(executorHandle) end
 --Object-Free - MasterPool(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_masterpool.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_masterpool.html)
 ---
 ---@return lightuserdata # The returned handle to the pool of masters.
 function MasterPool() end
@@ -1173,7 +1173,7 @@ function MasterPool() end
 --Object-Free - MessageBox({title:string,[, string:backColor][, integer:timeout (ms)][, boolean:timeoutResultCancel][, integer:timeoutResultID][, string:icon][, string:titleTextColor][, string:messageTextColor] [, boolean:autoCloseOnInput] string:message[, integer:message_align_h(Enums.AlignmentH)][, integer:message_align_v(Enums.AlignmentV)][, integer|lightuserdata:display], commands:{array of {integer:value, string:name[, integer:order]}}, inputs:{array of {string:name, string:value, string:blackFilter, string:whiteFilter, string:vkPlugin, integer:maxTextLength[, integer:order]}}, states:{array of {string:name, boolean:state[, integer:order]}, selectors:{array of {name:string, integer:selectedValue, values:table[, type:integer 0-swipe, 1-radio][, integer:order]} }): {boolean:success, integer:result, inputs:{array of [string:name] = string:value}, states:{array of [string:name] = boolean:state}, selectors:{array of [string:name] = integer:selected-value}}
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_messagebox.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_messagebox.html)
 ---
 ---@param tableMessageBox table {title:string, backColor:string, timeout:number, timeoutResultCancel:boolean, timeoutResultID:number, icon:string, titleTextColor:string, messageTextColor:string, message:string, display:integer|lightuserdata, commands:table{value:integer, name:string}, inputs:table{name:string, value:string, blackfilter:string, vkPlugin:string, maxTextLength:integer}, states:table{name:string, state:boolean, group:integer}, selectors:table{name:string, selectedValue:integer, values:table{valueName:integer,...}}}
 ---@return table # The returned table contains a boolean indicating success and a "result" integer returning an integer the value of the tapped command button or the timeout result ID. It can also contain sub tables for the inputs, states, or selectors. 
@@ -1200,7 +1200,7 @@ function Mouse(displayIndex, type, button) end
 --Object-Free - MouseObj(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_mouseobj.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_mouseobj.html)
 ---
 ---Root().GraphicsRoot.PultCollect["Pult 1"].Devices["MouseCollect 1"]["Mouse 1"]
 ---@return lightuserdata # Returns the handle to the first found mouse object.
@@ -1210,7 +1210,7 @@ function MouseObj() end
 --Object-Free - NeedShowSave(nothing): boolean:need_show_save
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_needshowsave.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_needshowsave.html)
 ---
 ---@return boolean # Returns true if there are unsaved elements in the show file.
 function NeedShowSave() end
@@ -1226,18 +1226,18 @@ function NeedShowSave() end
 function NextDmxModeFixture(fixture) end
 
 --118
---Object-Free - ObjectList(string:address): table of light_userdata:handle
+--Object-Free - ObjectList(string:address[, {['selected_as_default'=boolean:enabled], ['reverse_order'=boolean:enabled]}): {light_userdata:handles}
 --ToDo - Update needed
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_objectlist.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_objectlist.html)
 ---
 ---@param address string The string input should match the commandline input to make a selection of objects e.g. "Fixture 1 trhru 10".
 ---@return table # The table contains handles to the objects.
 function ObjectList(address) end
 
 --119
---Object-Free - OverallDeviceCertificate(nothing): pCertificate::OverallCertificate
+--Object-Free - OverallDeviceCertificate(nothing): light_userdata:handle
 --ToDo
 
 ---
@@ -1250,14 +1250,14 @@ function OverallDeviceCertificate() end
 --Object-Free - Patch(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_patch.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_patch.html)
 --- 
 ---Root().ShowData.LivePatch
 ---@return lightuserdata # The returned handle to the patch object.
 function Patch() end
 
 --121
---Object-Free - PluginVars([string: plugin name]): light userdata: plugin variables
+--Object-Free - PluginVars([string:plugin_name]): light_userdata:plugin_preferences
 --ToDo
 ---
 ---Inside the current Screen Configuration, we have a collect of Plugin Preferences. 
@@ -1274,7 +1274,7 @@ function Patch() end
 function PluginVars(pluginName) end
 
 --122
---Object-Free - PopupInput({title:str, caller:handle, items:table:{{'str'|'int'|'lua'|'handle', name, type-dependent}...}, selectedValue:str, x:int, y:int, target:handle, render_options:{left_icon,number,right_icon}, useTopLeft:bool, properties:{prop:value}, add_args:{FilterSupport='Yes'/'No'}}): string:value
+--Object-Free - PopupInput({title:str, caller:handle, items:table:{{'str'|'int'|'lua'|'handle', name, type-dependent}...}, selectedValue:str, x:int, y:int, target:handle, render_options:{left_icon, number, right_icon}, useTopLeft:bool, properties:{prop:value}, add_args:{FilterSupport='Yes'/'No'}}): integer:selected_index, string:selected_value
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1284,7 +1284,7 @@ function PluginVars(pluginName) end
 function PopupInput(popupTable) end
 
 --123
---Object-Free - PrepareWaitObjectChange(light_userdata:object[, int:change level threshold]): true or nil
+--Object-Free - PrepareWaitObjectChange(light_userdata:handle[ ,integer:change_level_threshold]): boolean:true or nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1295,10 +1295,10 @@ function PopupInput(popupTable) end
 function PrepareWaitObjectChange(object, changeLevelThreshold) end
 
 --124
---Object-Free - Printf(string:format ...): nothing
+--Object-Free - Printf(string:formatted_command ...): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_printf.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_printf.html)
 ---
 ---@generic T
 ---@param format string The string input is printed in the Command Line History and the System Monitor. It allows for format specifiers.
@@ -1309,7 +1309,7 @@ function Printf(format, ...) end
 --Object-Free - Programmer(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_programmer.html)
 ---
 ---@return lightuserdata # Handle to the current users programmer object
 function Programmer() end
@@ -1318,7 +1318,7 @@ function Programmer() end
 --Object-Free - ProgrammerPart(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_programmerpart.html)
 ---
 ---@return lightuserdata # Handle to the current users programmer part object
 function ProgrammerPart() end
@@ -1327,14 +1327,14 @@ function ProgrammerPart() end
 --Object-Free - Pult(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_pult.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_pult.html)
 --- 
 ---Root().GraphicsRoot.PultCollect["Pult 1"]
 ---@return lightuserdata # Handle to the Pult Collect object.
 function Pult() end
 
 --128
---Object-Free - RefreshLibrary(light userdata: Handle): 
+--Object-Free - RefreshLibrary(light_userdata:handle): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1343,16 +1343,16 @@ function Pult() end
 function RefreshLibrary(handle) end
 
 --129
---Object-Free - ReleaseType(nothing): string::release type
+--Object-Free - ReleaseType(nothing): string:releasetype
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_releasetype.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_releasetype.html)
 ---
 ---@return string # The string indicates the release type
 function ReleaseType() end
 
 --130
---Object-Free - RemoteCommand(string:ip, string:command): bool: success
+--Object-Free - RemoteCommand(string:ip, string:command): boolean:success
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1366,13 +1366,13 @@ function RemoteCommand(ipAddress, command) end
 --Object-Free - Root(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_root.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_root.html)
 ---
 ---@return lightuserdata # Handle to the Root object.
 function Root() end
 
 --132
---Object-Free - SaveExecConfig(light_userdata: exec handle): nothing
+--Object-Free - SaveExecConfig(light_userdata:executor): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1393,7 +1393,7 @@ function SelectedDrive() end
 --Object-Free - SelectedFeature(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectedfeature.html)
 ---
 ---@return lightuserdata # Handle of the current users selected feature.
 function SelectedFeature() end
@@ -1402,7 +1402,7 @@ function SelectedFeature() end
 --Object-Free - SelectedLayout(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectedlayout.html)
 ---
 ---@return lightuserdata # Handle of the current users selected layout.
 function SelectedLayout() end
@@ -1411,7 +1411,7 @@ function SelectedLayout() end
 --Object-Free - SelectedSequence(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_selectedsequence.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectedsequence.html)
 ---
 ---@return lightuserdata # Returns the handle to this users currently selected sequence.
 function SelectedSequence() end
@@ -1420,7 +1420,7 @@ function SelectedSequence() end
 --Object-Free - SelectedTimecode(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectedtimecode.html)
 ---
 ---@return lightuserdata # Handle of the current users selected timecode.
 function SelectedTimecode() end
@@ -1429,7 +1429,7 @@ function SelectedTimecode() end
 --Object-Free - SelectedTimer(nothing): light_userdata:handle
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectedtimer.html)
 ---
 ---@return lightuserdata # Handle of the current users selected timer.
 function SelectedTimer() end
@@ -1438,13 +1438,13 @@ function SelectedTimer() end
 --Object-Free - Selection(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_selection.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selection.html)
 ---
 ---@return lightuserdata # Returns the handle to the object list containing this users currently selected (sub)fixtures.
 function Selection() end
 
 --140
---Object-Free - SelectionComponentX(nothing): int: min, int:max, int:index, int:block, int:group
+--Object-Free - SelectionComponentX(nothing): integer:min, integer:max, integer:index, integer:block, integer:group
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1457,7 +1457,7 @@ function Selection() end
 function SelectionComponentX() end
 
 --141
---Object-Free - SelectionComponentY(nothing): int: min, int:max, int:index, int:block, int:group
+--Object-Free - SelectionComponentY(nothing): integer:min, integer:max, integer:index, integer:block, integer:group
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1470,7 +1470,7 @@ function SelectionComponentX() end
 function SelectionComponentY() end
 
 --142
---Object-Free - SelectionComponentZ(nothing): int: min, int:max, int:index, int:block, int:group
+--Object-Free - SelectionComponentZ(nothing): integer:min, integer:max, integer:index, integer:block, integer:group
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1483,19 +1483,19 @@ function SelectionComponentY() end
 function SelectionComponentZ() end
 
 --143
---Object-Free - SelectionCount(nothing): int: amount of selected subfixtures
+--Object-Free - SelectionCount(nothing): integer:amount_of_selected_subfixtures
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_selectioncount.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectioncount.html)
 ---
 ---@return integer # Returns the amount of currently selected (sub)fixtures.
 function SelectionCount() end
 
 --144
---Object-Free - SelectionFirst(nothing): int:first subfixture index, int:x, int:y, int:z
+--Object-Free - SelectionFirst(nothing): integer:first_subfixture_index, integer:x, integer:y, integer:z
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_selectionfirst.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectionfirst.html)
 ---
 ---@return integer subFixtureIndex The returned index is the patch index of the first fixture in the current selection. It is not the FID or CID. The index is 0-based.
 ---@return integer x This is the fixtures position on the X-axis in the selection grid. The selection grid is 0-based.
@@ -1504,10 +1504,10 @@ function SelectionCount() end
 function SelectionFirst() end
 
 --145
---Object-Free - SelectionNext(int:current subfixture index): int: next subfixture index, int:x, int:y, int:z
+--Object-Free - SelectionNext(integer:current_subfixture_index): integer:next_subfixture_index, integer:x, integer:y, integer:z
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_selectionnext.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_selectionnext.html)
 ---
 ---@return integer subFixtureIndex The returned index is the patch index of the next fixture in the current selection. It is not the FID or CID. The index is 0-based.
 ---@return integer x This is the fixtures position on the X-axis in the selection grid. The selection grid is 0-based.
@@ -1516,7 +1516,7 @@ function SelectionFirst() end
 function SelectionNext() end
 
 --146
---Object-Free - SelectionNotifyBegin(ligh_userdata:associated context): 
+--Object-Free - SelectionNotifyBegin(light_userdata:associated_context): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1525,7 +1525,7 @@ function SelectionNext() end
 function SelectionNotifyBegin(associatedContext) end
 
 --147
---Object-Free - SelectionNotifyEnd(ligh_userdata:associated context): 
+--Object-Free - SelectionNotifyEnd(light_userdata:associated_context): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1534,7 +1534,7 @@ function SelectionNotifyBegin(associatedContext) end
 function SelectionNotifyEnd(associatedContext) end
 
 --148
---Object-Free - SelectionNotifyObject(ligh_userdata:object to notify about): 
+--Object-Free - SelectionNotifyObject(light_userdata:object_to_notify_about): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1543,10 +1543,10 @@ function SelectionNotifyEnd(associatedContext) end
 function SelectionNotifyObject(notifyObject) end
 
 --149
---Object-Free - SerialNumber(nothing): string::SerialNumber
+--Object-Free - SerialNumber(nothing): string:serialnumber
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_serialnumber.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_serialnumber.html)
 ---
 ---@return string # The returned string is the Serial number of the grandMA3 hardware or grandMA3 onPC.
 function SerialNumber() end
@@ -1555,13 +1555,13 @@ function SerialNumber() end
 --Object-Free - SetBlockInput(boolean:block): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setblockinput.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setblockinput.html)
 ---
 ---@param block boolean
 function SetBlockInput(block) end
 
 --151
---Object-Free - SetColor(string:colormodel(RGB,xyY,Lab,XYZ,HSB), double:tripel1, double:tripel2, double:tripel3, double: Brightness, double: Quality, bool: const_Brightness): int:flag
+--Object-Free - SetColor(string:color_model('RGB', 'xyY', 'Lab', 'XYZ', 'HSB'), float:tripel1, float:tripel2, float:tripel3, float:brightness, float:quality, boolean:const_brightness): integer:flag
 --ToDo
 
 ---
@@ -1581,17 +1581,17 @@ function SetBlockInput(block) end
 function SetColor(colormodel, tripel1, tripel2, tripel3, brightness, quality, constBrightness) end
 
 --152
---Object-Free - SetLED(light_userdata:usb device object handle,table:led_values): nothing
+--Object-Free - SetLED(light_userdata:usb_device_object_handle, table:led_values): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setled.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setled.html)
 ---
 ---@param usbDeviceObject lightuserdata
 ---@param ledValue table
 function SetLED(usbDeviceObject, ledValue) end
 
 --153
---Object-Free - SetProgPhaser(number:uichannelindex, {[abs_preset:<light_userdata: handle>][rel_preset:<light_userdata: handle>][fade:<val>][delay:<val>][speed:<Hz>][phase:<val>][measure:<val>][gridpos:<val>]   {[function:<val>] [absolute:<val>][absolute_value:<val>][relative:<val>] [accel:<val>][accel_type:<Enums.SplineType>][decel:<val>][decel_type:<Enums.SplineType>] [trans:<val>][width:<val>] [integrated:<light_userdata: handle>]}*}): nothing
+--Object-Free - SetProgPhaser(integer:ui_channel_index, {['abs_preset'=light_userdata:handle], ['rel_preset'=light_userdata:handle], ['fade'=integer:seconds], ['delay'=integer:seconds], ['speed'=integer:hz], ['phase'=integer:degree], ['measure'=integer:value], ['gridpos'=integer:value], {['channel_function'=integer:value], ['absolute'=integer:percent], ['absolute_value'=integer:value], ['relative'=integer:percent], ['accel'=integer:percent[, 'accel_type'=integer:enum_value(Enums.SplineType)]], ['decel'=integer:percent[, 'decel_type'=integer:enum_value(Enums.SplineType)]], ['trans'=integer:percent], ['width'=integer:percent], ['integrated'=light_userdata:preset_handle]}}): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1601,7 +1601,7 @@ function SetLED(usbDeviceObject, ledValue) end
 function SetProgPhaser(uiChannelIndex, phaserValueTable) end
 
 --154
---Object-Free - SetProgPhaserValue(number:uichannelindex, number:step, {[function:<val>] [absolute:<val>][absolute_value:<val>][relative:<val>] [accel:<val>][accel_type:<Enums.SplineType>][decel:<val>][decel_type:<Enums.SplineType>] [trans:<val>][width:<val>] [integrated:<light_userdata: handle>]}): nothing
+--Object-Free - SetProgPhaserValue(integer:ui_channel_index, integer:step, {['channel_function'=integer:value], ['absolute'=integer:percent], ['absolute_value'=integer:value], ['relative'=integer:percent], ['accel'=integer:percent[, 'accel_type'=integer:enum_value(Enums.SplineType)]], ['decel'=integer:percent[, 'decel_type'=integer:enum_value(Enums.SplineType)]], ['trans'=integer:percent], ['width'=integer:percent], ['integrated'=light_userdata:preset_handle]}): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1612,20 +1612,20 @@ function SetProgPhaser(uiChannelIndex, phaserValueTable) end
 function SetProgPhaserValue(uiChannelIndex, step, phaserValueTable) end
 
 --155
---Object-Free - SetProgress(light_userdate:handle, integer:value): nothing
+--Object-Free - SetProgress(integer:progressbar_index, integer:value): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setprogress.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setprogress.html)
 ---
 ---@param handle lightuserdata The Handle for the progress bar.
 ---@param value integer The desired value indicating the current status or position of the progress bar.
 function SetProgress(handle, value) end
 
 --156
---Object-Free - SetProgressRange(light_userdate:handle, integer:start, integer:end): nothing
+--Object-Free - SetProgressRange(integer:progressbar_index, integer:start, integer:end): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setprogressrange.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setprogressrange.html)
 ---
 ---@param handle lightuserdata The Handle for the progress bar.
 ---@param rangeStart integer The start value for the progress bar's range.
@@ -1633,20 +1633,20 @@ function SetProgress(handle, value) end
 function SetProgressRange(handle, rangeStart, rangeEnd) end
 
 --157
---Object-Free - SetProgressText(light_userdate:handle, string:text): nothing
+--Object-Free - SetProgressText(integer:progressbar_index, string:text): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setprogresstext.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setprogresstext.html)
 ---
 ---@param handle lightuserdata The Handle for the progress bar.
 ---@param text string The text string to be displayed on the progress bar.
 function SetProgressText(handle, text) end
 
 --158
---Object-Free - SetVar(light userdata: variables, string:varname,value): bool:success
+--Object-Free - SetVar(light_userdata:variables, string:varname, value): boolean:success
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_setvar.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_setvar.html)
 ---
 ---@param variableSet lightuserdata The handle to a variable set (Global or User).
 ---@param variableName string The name of the variable.
@@ -1658,7 +1658,7 @@ function SetVar(variableSet, variableName, value) end
 --Object-Free - ShowData(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_showdata.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_showdata.html)
 --- 
 ---Root().ShowData
 ---@return lightuserdata # Handle to the ShowData object.
@@ -1668,36 +1668,36 @@ function ShowData() end
 --Object-Free - ShowSettings(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_showsettings.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_showsettings.html)
 --- 
 ---Root().ShowData.ShowSettings
 ---@return lightuserdata # Handle to the ShowSettings object.
 function ShowSettings() end
 
 --161
---Object-Free - StartProgress(string:name): light_userdate:handle
+--Object-Free - StartProgress(string:name): integer:progressbar_index
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_startprogress.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_startprogress.html)
 ---
 ---@param name string The string is the title for the progress bar.
 ---@return lightuserdata # Handle to the progrees bar.
 function StartProgress(name) end
 
 --162
---Object-Free - StopProgress(light_userdate:handle): nothing
+--Object-Free - StopProgress(integer:progressbar_index): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_stopprogress.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_stopprogress.html)
 ---
 ---@param handle lightuserdata The handle for the progress bar to be stopped.
 function StopProgress(handle) end
 
 --163
---Object-Free - StrToHandle(string: handle in H#... format): light_userdata:handle
+--Object-Free - StrToHandle(string:handle(in H#... format)): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_strtohandle.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_strtohandle.html)
 ---
 ---@param handleInStringFormat string The string should be a handle number in a hexadecimal format.
 ---@return lightuserdata # The returned handle based on the string.
@@ -1713,7 +1713,7 @@ function SyncFS() end
 
 --165
 --Object-Free - TestPlaybackOutput(table:expectations): boolean:success, string:result text
---ToDo
+--ToDo - Internal function
 ---
 ---[Online Manual Page]()
 ---
@@ -1724,7 +1724,7 @@ function TestPlaybackOutput(expectationsTable) end
 
 --166
 --Object-Free - TestPlaybackOutputSteps(table:expectations): boolean:success, string:result text
---ToDo
+--ToDo - Internal function
 ---
 ---[Online Manual Page]()
 ---
@@ -1735,10 +1735,10 @@ function TestPlaybackOutputSteps(expectationsTable) end
 
 
 --167
---Object-Free - TextInput([string:title [, string:value [, integer:x [, integer:y]]]]): string:value
+--Object-Free - TextInput([string:title[, string:value[, integer:x[, integer:y]]]]): string:value
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_textinput.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_textinput.html)
 ---
 ---@param title? string|nil This string is the title for the pop-up. The title bar has a default "Edit" text at the beginning of the title that cannot be removed.
 ---@param value? string|nil This string is the text already in the input field - can be used to provide user guidance.
@@ -1748,39 +1748,40 @@ function TestPlaybackOutputSteps(expectationsTable) end
 function TextInput(title, value, x, y) end
 
 --168
---Object-Free - Time(nothing): number:time
+--Object-Free - Time(nothing): integer:time
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_time.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_time.html)
 ---
 ---@return number # Returns the "online time" in seconds.
 function Time() end
 
 --169
---Object-Free - Timer(function:name, number:delaytime, number:max_count, [function:cleanup], [light_userdata:context object]): nothing
+--Object-Free - Timer(function:timer_function, integer:delay_time, integer:max_count[, function:cleanup][, light_userdata:context object]): nothing
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_timer.html)
 ---
----@param name function
----@param delayTime number
----@param maxCount number
----@param cleanup? function|nil
----@param contextObject? lightuserdata
+---@param name function This is the name for the function that will be called using the timer.
+---@param delayTime number This is the wait time between the function calls. 
+---@param maxCount number This is the number of times the function will be called.
+---@param cleanup? function|nil This is a function that will be called when the timer function has finished.
+---@param contextObject? lightuserdata This is a handle to an object that will be passed into the called function.
 function Timer(name, delayTime, maxCount, cleanup, contextObject) end
 
 --170
---Object-Free - ToAddr(light_userdata:handle): string:address
+--Object-Free - ToAddr(light_userdata:handle, boolean:with_name): string:address
 
 ---
----[Online Manual Page]()
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_toaddr.html)
 ---
----@param handle lightuserdata
----@return string
-function ToAddr(handle) end
+---@param handle lightuserdata Handle to the object for which the address should be returned.
+---@param withName? boolean If this is true then the name is returned. If this is false then the number is returned. False is the default.
+---@return string # The returned string is the address for the object.
+function ToAddr(handle, withName) end
 
 --171
---Object-Free - Touch(integer: displayIndex, string:type('press','move','release'), integer:touchId, integer:absX, integer:absY): 
+--Object-Free - Touch(integer:display_index, string:type('press', 'move', 'release'), integer:touch_id, integer:abs_x, integer:abs_y): nothing
 --ToDo
 ---
 ---[Online Manual Page]()
@@ -1796,10 +1797,10 @@ function ToAddr(handle) end
 function Touch(displayIndex, types, touchId, absX, absY) end
 
 --172
---Object-Free - TouchObj(nothing): light_userdata:touch object handle
+--Object-Free - TouchObj(nothing): light_userdata:handle
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_touchobj.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_touchobj.html)
 ---
 ---Root().GraphicsRoot.PultCollect["Pult 1"].Devices["Touch 2"]
 ---@return lightuserdata # The handle to the touch object.
@@ -1809,16 +1810,16 @@ function TouchObj() end
 --Object-Free - Unhook(function:callback): nothing
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_unhook.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_unhook.html)
 ---
 ---@param callback integer This must be an integer matching the hook returned when using the HookObjectChange function.
 function Unhook(callback) end
 
 --174
---Object-Free - UnhookMultiple(function:callback(can be nil), light_userdata:handle to target(can be nil), light_userdata: handle to context (can be nil)): integer: amount of removed hooks
+--Object-Free - UnhookMultiple(function:callback(can be nil), light_userdata:handle to target(can be nil), light_userdata:handle to context (can be nil)): integer:amount of removed hooks
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_unhookmultiple.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_unhookmultiple.html)
 ---
 ---@param callback function|nil
 ---@param handleTarget lightuserdata|nil
@@ -1827,19 +1828,19 @@ function Unhook(callback) end
 function UnhookMultiple(callback, handleTarget, handleContext) end
 
 --175
---Object-Free - UserVars(): light userdata: user variables
+--Object-Free - UserVars(nothing): light_userdata:user_variables
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_uservars.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_uservars.html)
 ---
 ---@return lightuserdata # Returns the handle to the user variable set.
 function UserVars() end
 
 --176
---Object-Free - Version(nothing): string::version
+--Object-Free - Version(nothing): string:version
 
 ---
----[Online Manual Page](https://help.malighting.com/grandMA3/2.0/HTML/lua_objectfree_version.html)
+---[Online Manual Page](https://help.malighting.com/grandMA3/2.1/HTML/lua_objectfree_version.html)
 ---
 ---@return string # The returned string indicates the version number of the software.
 function Version() end
@@ -1847,8 +1848,9 @@ function Version() end
 --177
 --Object-Free - WaitModal([number:seconds to wait]): handle to modal overlay or nil on failure(timeout)
 --ToDo
+
 ---
----
+---[Online Manual Page]()
 ---
 ---@param seconds number
 ---@return lightuserdata|nil # Handle to modal overlay or nil on failure or timeout 
@@ -1857,8 +1859,9 @@ function WaitModal(seconds) end
 --178
 --Object-Free - WaitObjectDelete(light_userdata:handle to UIObject[, number:seconds to wait]): boolean:true on success, nil on timeout
 --ToDo
+
 ---
----
+---[Online Manual Page]()
 ---
 ---@param handleToUIObject lightuserdata
 ---@param secondsWait number
