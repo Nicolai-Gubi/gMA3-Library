@@ -212,6 +212,12 @@ function GetClass(objectHandle) end
 
 --047
 -- GetDependencies(light_userdata:handle): {light_userdata:handle}
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata The Object.
+---@return # The returned table contains handles to all the objects which this object depends on.
+function GetDependencies(objectHandle) end
 
 --048
 -- GetDisplay(light_userdata:handle to UIObject): light_userdata:display_handle
@@ -222,11 +228,30 @@ function GetClass(objectHandle) end
 --050
 -- GetExportFileName(light_userdata:handle[, boolean:camel_case_to_file_name]): string:file_name
 
+--- This table is used for the "GetFader" and "GetFaderText" function.
+---@class tableGetFader
+---@field token? string The valid options are: FaderMaster, FaderRate, FaderTemp, FaderSpeed, FaderTime, FaderXFade, FaderXFadeA, FaderXFadeB, FaderHighlight, FaderLowlight.
+---@field index? integer 
+
 --051
 -- GetFader(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): float:value[0..100]
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata
+---@param GetFaderTable tableGetFader
+---@return number # The faders current value is returned as a float number.
+function GetFader(objectHandle, GetFaderTable) end
 
 --052
 -- GetFaderText(light_userdata:handle, {[string:token(Fader*)], [integer:index]}): string:text
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata
+---@param GetFaderTable tableGetFader
+---@return number # The faders current value is returned as a string.
+function GetFaderText(objectHandle, GetFaderTable) end
 
 --053
 -- GetLineAt(light_userdata:handle, integer:line_number): string:line_content
@@ -260,6 +285,12 @@ function GetClass(objectHandle) end
 
 --063
 -- GetReferences(light_userdata:handle): {light_userdata:handle}
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata The Object.
+---@return table # The returned table contains handles to all the objects referencing the object.
+function GetReferences(objectHandle) end
 
 --064
 -- GetScreen(light_userdata:handle to UIObject): light_userdata:handle
@@ -272,9 +303,21 @@ function GetClass(objectHandle) end
 
 --067
 -- GetUIEditor(light_userdata:handle): string:ui_editor_name
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata The Object.
+---@return string # The name of the objects' UI editor.
+function GetUIEditor(objectHandle) end
 
 --068
 -- GetUISettings(light_userdata:handle): string:ui_settings_name
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata The Object.
+---@return string # The name of the objects' UI settings.
+function GetUISettings(objectHandle) end
 
 --069
 -- GridCellExists(light_userdata:handle to UIGrid (or derived), {r, c}:cell): boolean
@@ -528,8 +571,20 @@ function Ptr(handle, index) end
 --145
 -- SetEnabledListItem(light_userdata:handle, integer:index[, bool:enable(default:true)]): nothing
 
+--- This table is used for the "SetFader" function.
+---@class tableSetFader
+---@field value? number A float number defining teh desired value. If undefined, then default value is 0.0.
+---@field token? string The valid options are: FaderMaster, FaderRate, FaderTemp, FaderSpeed, FaderTime, FaderXFade, FaderXFadeA, FaderXFadeB, FaderHighlight, FaderLowlight.
+---@field faderEnabled? boolean True enables the fader if it can be toggled. False disables the fader. 
+
 --146
 -- SetFader(light_userdata:handle, {[float:value[0..100]], [boolean:faderEnabled], [string:token(Fader*)]}): nothing
+---
+---[Online Manual Page]()
+---
+---@param objectHandle lightuserdata The Object.
+---@param setFaderTable tableSetFader The table is defined above.
+function SetFader(objectHandle, setFaderTable)end
 
 --147
 -- SetListItemAppearance(light_userdata:handle, integer:index, {[left={...AppearanceData...}][right={...AppearanceData...}]}): nothing
